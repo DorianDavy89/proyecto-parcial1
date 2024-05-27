@@ -46,15 +46,18 @@ function Inicio() {
                     <FormControl className="form">
                         <h1>Crear Cuenta</h1>
                         <div class="social-icons">
-                            <Link href="#" className="icon"><GoogleIcon sx={{ color: 'white' }} /></Link>
-                            <Link href="#" className="icon"><FacebookIcon sx={{ color: 'white' }} /></Link>
-                            <Link href="#" className="icon"><GitHubIcon sx={{ color: 'white' }} /></Link>
-                            <Link href="#" className="icon"><InstagramIcon sx={{ color: 'white' }} /></Link>
+                            <Link href="#" className="icon"><GoogleIcon sx={{ color: '#bc5090' }} /></Link>
+                            <Link href="#" className="icon"><FacebookIcon sx={{ color: '#bc5090' }} /></Link>
+                            <Link href="#" className="icon"><GitHubIcon sx={{ color: '#bc5090' }} /></Link>
+                            <Link href="#" className="icon"><InstagramIcon sx={{ color: '#bc5090' }} /></Link>
                         </div>
                         <span>O Usa tu Email para Registrarte</span>
-                        <TextField id="standard-basic" type="text" label="Nombre" variant="standard" />
-                        <TextField id="standard-basic" type="email" label="Email" variant="standard" />
-                        <TextField id="standard-basic" type="password" label="Password" variant="standard" />
+                        <br />
+                        <input id="email-singup" type="email" placeholder="Email"/>
+                        <br />
+                        <input id="nombre-singup" type="text" placeholder="Nombre"/>
+                        <br />
+                        <input id="password-singup" type="password" placeholder="Password"/>
                         <br />
                         <div className="button-sing">
                             <Button className="sing" variant="contained">Crear<AccountBoxIcon sx={{ ml: 1 }} /></Button>
@@ -67,18 +70,18 @@ function Inicio() {
                     <FormControl className="form">
                         <h1>Iniciar Sesion</h1>
                         <div class="social-icons">
-                            <Link href="#" className="icon"><GoogleIcon sx={{ color: 'white' }} /></Link>
-                            <Link href="#" className="icon"><FacebookIcon sx={{ color: 'white' }} /></Link>
-                            <Link href="#" className="icon"><GitHubIcon sx={{ color: 'white' }} /></Link>
-                            <Link href="#" className="icon"><InstagramIcon sx={{ color: 'white' }} /></Link>
+                            <Link href="#" className="icon"><GoogleIcon sx={{ color: '#bc5090' }} /></Link>
+                            <Link href="#" className="icon"><FacebookIcon sx={{ color: '#bc5090' }} /></Link>
+                            <Link href="#" className="icon"><GitHubIcon sx={{ color: '#bc5090' }} /></Link>
+                            <Link href="#" className="icon"><InstagramIcon sx={{ color: '#bc5090' }} /></Link>
                         </div>
                         <span>O Usa tu Email/Password</span>
-                        <TextField id="standard-basic" type="email" label="Email" variant="standard"
-                            InputProps={{ style: inputStyle, }} />
-                        <TextField id="standard-basic" type="password" label="Password" variant="standard"
-                            InputProps={{ style: inputStyle, }} sx={{ color: 'white' }} />
                         <br />
-                        <Link href="#" className="forget" underline="none" color={"white"}>Ha Olvidado su Password?</Link>
+                        <input id="email-login" type="email" placeholder="Email"/>
+                        <br />
+                        <input id="password-login" type="password" placeholder="Password"/>
+                        <br />
+                        <Link href="#" className="forget" underline="none" color={"#ff8531"}>Ha Olvidado su Password?</Link>
                         <br />
                         <div className="button-sing">
                             <Button className="sing" variant="contained">Login<LoginIcon sx={{ ml: 1 }} /></Button>

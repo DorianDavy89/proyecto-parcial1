@@ -25,13 +25,13 @@ body {
 label {
     font-family: Righteous;
     font-size: 36px;
-    color: #1CB698;
+    color: #ffd380;
     text-decoration: none;
 }
 
 .container {
     font-family: Righteous;
-    background-color: #272e32;
+    background-color: #00202e;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
@@ -42,7 +42,7 @@ label {
 }
 
 .container h1{
-    color: #1CB698;
+    color: #ffd380;
 }
 
 .container p {
@@ -50,11 +50,12 @@ label {
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
+    color: #ff8531;
 }
 
 .container span {
     font-size: 12px;
-    color: #fff;
+    color: #ff8531;
     font-weight: bold;
 }
 
@@ -64,7 +65,7 @@ label {
 
 
 .container Button {
-    background-color: #512da8;
+    background-color: #8a508f;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -83,7 +84,7 @@ label {
 }
 
 .form{
-    background-color: #272e32;
+    background-color: #00202e;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,9 +183,9 @@ label {
 }
 
 .toggle {
-    background-color: #512da8;
+    background-color: #00202e;
     height: 100%;
-    background: linear-gradient(to right, #512da8, #4B0082);
+    background: linear-gradient(to right, #003f5c, #003f5c);
     color: #fff;
     position: relative;
     left: -100%;
@@ -236,9 +237,9 @@ label {
 
 .contenedor-imagen img{
     margin-top: 40px;
-    border: 10px solid #1CB698;
+    border: 10px solid #bc5090;
     display: block;
     width: 70%;
     margin: auto;
-    border-radius: 100%;
+    border-radius: 30%;
 }
