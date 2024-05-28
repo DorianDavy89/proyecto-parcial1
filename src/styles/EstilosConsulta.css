@@ -8,31 +8,105 @@
 }
 
 body {
-    background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    background: linear-gradient(to top, rgba(30, 35, 38, .8), rgba(30, 35, 38, 1)),
+        url('../imagenes/riesgos-seguridad-IA-3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
 }
 
-.contenido-izq{
-    background-color: #fff;
+.contenido-izq {
+    background-color: #003f5c;
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    width: 550px;
     max-width: 100%;
-    min-height: 480px;
-    top: 45px;
-    margin-left: 30px;
+    min-height: 350px;
+    top: 10px;
+    margin-left: 150px;
 }
 
-.contenido-der{
-    background-color: #fff;
+.contenido-der {
+    background-color: #003f5c;
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
     width: 450px;
-    top: -330px;
+    top: -430px;
     margin-left: auto;
-    margin-right: 50px;
+    margin-right: 150px;
+}
+
+.contenido-izq h2 {
+    color: #ffa600;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.titulo-pagina {
+    width: 100%;
+    text-align: left;
+    margin-left: 20px;
+
+}
+
+.titulo-pagina h1 {
+    color: #8a508f;
+    font-family: Righteous;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: left;
+}
+
+.contenido-der h1 {
+    color: #ffa600;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.descripcion-comentario label{
+    color: #ffd380;
+    font-weight: bolder;
+    margin-left: 50px;
+}
+
+.descripcion-comentario {
+    text-align: left;
+}
+
+textarea{
+    background-color: #00202e;
+    border-radius: 8px;
+    padding: 8px;
+    color: #ffd380;
+    width: 300px;
+}
+
+textarea::placeholder{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.descripcion-comentario .comentario {
+    text-align: left;
+}
+
+.comentario Button {
+    margin-top: -55px;
+    margin-left: 12px;
+    transition: all 0.50s;
+}
+
+.comentario Button:hover{
+    transform: scale(1.5);
 }

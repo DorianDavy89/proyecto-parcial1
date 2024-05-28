@@ -7,7 +7,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Link from '@mui/material/Link';
-import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import LoginIcon from '@mui/icons-material/Login';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
@@ -28,10 +27,6 @@ function Inicio() {
     // Función para desactivar el contenedor
     const deactivateContainer = () => {
         setContainerActive(false);
-    };
-
-    const inputStyle = {
-        color: 'white',
     };
 
     return (
@@ -81,7 +76,8 @@ function Inicio() {
                         <br />
                         <input id="password-login" type="password" placeholder="Password"/>
                         <br />
-                        <Link href="#" className="forget" underline="none" color={"#ff8531"}>Ha Olvidado su Password?</Link>
+                        <Link href="#" className="forget" underline="none" fontWeight={'bold'} 
+                        color={"#efd7cf"} fontSize={'12px'}>Ha Olvidado su Password?</Link>
                         <br />
                         <div className="button-sing">
                             <Button className="sing" variant="contained">Login<LoginIcon sx={{ ml: 1 }} /></Button>
@@ -95,6 +91,7 @@ function Inicio() {
                             <div className="contenedor-imagen">
                                 <img src={logo1} alt="" width="400"></img>
                             </div>
+                            <br />
                             <h1>Bienvenido de Regreso!</h1>
                             <p>Usa tus Credenciales para Loguearte</p>
                             <Button
@@ -110,6 +107,7 @@ function Inicio() {
                             <div className="contenedor-imagen">
                                 <img src={logo1} alt="" width="400"></img>
                             </div>
+                            <br />
                             <h1>Hola, Amigo!</h1>
                             <p>Registrate con Algunos Datos</p>
                             <Button

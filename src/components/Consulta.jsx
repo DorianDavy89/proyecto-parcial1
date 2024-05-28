@@ -2,6 +2,8 @@ import React from "react";
 import Container from '@mui/material/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImageGallery from "react-image-gallery";
+import AddCommentIcon from '@mui/icons-material/AddComment';
+import Button from '@mui/material/Button';
 import "react-image-gallery/styles/css/image-gallery.css";
 import '../styles/EstilosConsulta.css';
 
@@ -16,24 +18,27 @@ function Consulta() {
         {
             original: "https://picsum.photos/id/867/1600/900",
             thumbnail: "https://picsum.photos/id/867/150/80"
-        },
-
-        {
-            original: "https://picsum.photos/id/868/1600/900",
-            thumbnail: "https://picsum.photos/id/868/150/80"
         }
+        
     ];
 
     return (
         <body>
+            <div className="titulo-pagina">
+                <br />
+                <h1>Device Doctor</h1>
+            </div>
             <div className="contenido-izq">
-                <h1>Bienvenido</h1>
+                <br />
+                <h2>Progreso de Reparación</h2>
+                <br />
                 <Container>
                     <div className="vzl-fotos">
                         <ImageGallery
                             items={imagenes}
-                            showPlayButton = {false}
+                            showPlayButton={false}
                         />
+                        <br />
                     </div>
                 </Container>
             </div>
@@ -51,7 +56,8 @@ function Consulta() {
                         <br />
                         <br />
                         <div className="comentario">
-                        <textarea name="comentario" id="comentario" placeholder="Comentario"></textarea>
+                            <textarea name="comentario" id="comentario" placeholder="Comentario" style={{ marginRight: '10px' }}></textarea>
+                            <Button className="btn-comentario" variant="contained" color="secondary"><AddCommentIcon/></Button>
                         </div>
                         <br />
                     </div>

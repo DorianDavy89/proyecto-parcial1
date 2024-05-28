@@ -29,6 +29,20 @@ label {
     text-decoration: none;
 }
 
+input {
+    border-radius: 8px;
+    padding: 8px;
+    width: calc(100% - 24px);
+    background-color: #efd7cf;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+input::placeholder{
+    font-weight: bold;
+    font-size: 15px;
+}
+
 .container {
     font-family: Righteous;
     background-color: #00202e;
@@ -46,16 +60,17 @@ label {
 }
 
 .container p {
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: bold;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
-    color: #ff8531;
+    color: #efd7cf;
 }
 
 .container span {
     font-size: 12px;
-    color: #ff8531;
+    color: #efd7cf;
     font-weight: bold;
 }
 
@@ -173,13 +188,13 @@ label {
     height: 100%;
     overflow: hidden;
     transition: all 0.6s ease-in-out;
-    border-radius: 150px 0 0 100px;
+    border-radius: 100px 0 0 100px;
     z-index: 1000;
 }
 
 .container.active .toggle-container {
     transform: translateX(-100%);
-    border-radius: 0 150px 100px 0;
+    border-radius: 0 100px 100px 0;
 }
 
 .toggle {
@@ -239,7 +254,7 @@ label {
     margin-top: 40px;
     border: 10px solid #bc5090;
     display: block;
-    width: 70%;
+    width: 60%;
     margin: auto;
     border-radius: 30%;
 }
