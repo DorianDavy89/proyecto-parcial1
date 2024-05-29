@@ -10,7 +10,7 @@ import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import LoginIcon from '@mui/icons-material/Login';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import logo1 from '../imagenes/Logo1.jpg';
+import logo1 from '../imagenes/_19850dc1-c22c-4629-a862-f2e4853ec30e.jpg';
 import '../styles/EstilosInicio.css';
 
 
@@ -70,14 +70,14 @@ function Inicio() {
                             <Link href="#" className="icon"><GitHubIcon sx={{ color: '#bc5090' }} /></Link>
                             <Link href="#" className="icon"><InstagramIcon sx={{ color: '#bc5090' }} /></Link>
                         </div>
-                        <span>O Usa tu Email/Password</span>
+                        <span>O Usa tu User/Password</span>
                         <br />
-                        <input id="email-login" type="email" placeholder="Email"/>
+                        <input id="email-login" type="text" placeholder="User"/>
                         <br />
                         <input id="password-login" type="password" placeholder="Password"/>
                         <br />
                         <Link href="#" className="forget" underline="none" fontWeight={'bold'} 
-                        color={"#efd7cf"} fontSize={'12px'}>Ha Olvidado su Password?</Link>
+                        color={"#fff"} fontSize={'12px'}>Has Olvidado tu Password?</Link>
                         <br />
                         <div className="button-sing">
                             <Button className="sing" variant="contained">Login<LoginIcon sx={{ ml: 1 }} /></Button>
@@ -109,7 +109,8 @@ function Inicio() {
                             </div>
                             <br />
                             <h1>Hola, Amigo!</h1>
-                            <p>Registrate con Algunos Datos</p>
+                            <p>Bienvenido de Regreso</p>
+                            {/*
                             <Button
                                 variant="contained"
                                 class="hidden"
@@ -117,6 +118,7 @@ function Inicio() {
                                 onClick={activateContainer}>
                                 Crear
                             </Button>
+    */}
                         </div>
                     </div>
                 </div>

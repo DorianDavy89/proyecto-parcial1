@@ -10,7 +10,7 @@
 
 body {
     background: linear-gradient(to top, rgba(30, 35, 38, .8), rgba(30, 35, 38, 1)),
-        url('../imagenes/fondo1.jpg');
+        url('../imagenes/2023071617532164037-1024x585.jpg');
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,7 @@ body {
 label {
     font-family: Righteous;
     font-size: 36px;
-    color: #ffd380;
+    color: #ffa600;
     text-decoration: none;
 }
 
@@ -60,17 +60,17 @@ input::placeholder{
 }
 
 .container p {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: bold;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
-    color: #efd7cf;
+    color: #fff;
 }
 
 .container span {
     font-size: 12px;
-    color: #efd7cf;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -252,7 +252,7 @@ input::placeholder{
 
 .contenedor-imagen img{
     margin-top: 40px;
-    border: 10px solid #bc5090;
+    border: 10px solid #8a508f;
     display: block;
     width: 60%;
     margin: auto;

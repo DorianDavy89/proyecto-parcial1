@@ -14,6 +14,8 @@ import Box from '@mui/material/Box';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
+import Link from '@mui/material/Link';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { styled } from '@mui/material/styles';
 import '../styles/EstilosRegistro.css';
 import { FormControl } from "@mui/material";
@@ -125,9 +127,16 @@ function Registro() {
         <body>
             <Container className="container-registro">
                 <div className="form-containerRegistro">
-                    <br />
-                    <h1>Rergistro Cliente</h1>
-                    <br />
+                    <div className="icono-salir">
+                        <Link href="#" className="icon-salir" ><LogoutIcon sx={{ fontSize: 35, color: '#ffa600' }}/></Link>
+                    </div>
+                    <div className="name-logo">
+                        <h1>Device Doctor</h1>
+                    </div>
+                    <div className="titulo-cliente">
+                        <h1>Registro Cliente</h1>
+                        <br />
+                    </div>
                     <div className="boton-nuevo">
                         <Button className="btn-nuevo"
                             variant="contained"
@@ -137,7 +146,7 @@ function Registro() {
                         </Button>
                     </div>
                     <br />
-                    <br />
+
                     <div className="tabla-container">
                         <TableContainer component={Paper}>
                             <div className="table">
