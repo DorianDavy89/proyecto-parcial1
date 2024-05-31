@@ -273,7 +273,7 @@ function Registro() {
                     <div className="form-nuevo">
                         <Box sx={style}>
                             <FormControl className="form-modalNuevo">
-                                <h1>Nuevo Estudiante</h1>
+                                <h1>Nuevo Cliente</h1>
                                 <label>ID</label>
                                 <input
                                     type="text" name='id'

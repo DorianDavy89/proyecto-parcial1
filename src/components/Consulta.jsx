@@ -11,22 +11,9 @@ import '../styles/EstilosConsulta.css';
 
 function Consulta() {
 
-    const imagenes = [
-        {
-            original: "https://picsum.photos/id/866/1600/900",
-            thumbnail: "https://picsum.photos/id/866/150/80"
-        },
-
-        {
-            original: "https://picsum.photos/id/867/1600/900",
-            thumbnail: "https://picsum.photos/id/867/150/80"
-        }
-
-    ];
-
     return (
         <body>
-            <Container className="container-consulta">
+            <Container>
                 <div className="titulo-pagina">
                     <div className="icono-salir">
                         <Link href="#" className="icon-salir" ><LogoutIcon sx={{ fontSize: 35, color: '#ffa600' }} /></Link>
@@ -36,41 +23,51 @@ function Consulta() {
                         <br />
                     </div>
                 </div>
-                <div className="contenido-izq">
-                    <br />
-                    <h2>Progreso de Reparación</h2>
-                    <br />
-                    <Container>
-                        <div className="vzl-fotos">
-                            <ImageGallery
-                                items={imagenes}
-                                showPlayButton={false}
-                            />
-                            <br />
-                        </div>
-                    </Container>
-                </div>
 
-                <div className="contenido-der">
-                    <br />
-                    <h1>Descripcion</h1>
-                    <Container>
-                        <div className="descripcion-comentario">
-                            <label for="descripcion1" id="descripcion1">1- Lorem</label>
-                            <br />
-                            <label for="descripcion2" id="descripcion2">2- Lorem</label>
-                            <br />
-                            <label for="descripcion3" id="descripcion3">3- Lorem</label>
-                            <br />
-                            <br />
-                            <div className="comentario">
-                                <textarea name="comentario" id="comentario" placeholder="Comentario" style={{ marginRight: '10px' }}></textarea>
-                                <Button className="btn-comentario" variant="contained" color="secondary"><AddCommentIcon /></Button>
+                <section className="consulta">
+                    <div className="contenido-consulta">
+                        <h2>Progreso Reparacion</h2>
+                        <div className="fila">
+                            <div className="col izquierda">
+                                <h3>Datos</h3>
+                                <div className="item izq">
+                                    <h4>Detalle</h4>
+                                    <textarea name="datos" id="datos" readOnly></textarea>
+                                    <div class="conectori">
+                                        <div class="circuloi"></div>
+                                    </div>
+                                </div>
+                                <h3>Accesorios</h3>
+                                <div className="item izq">
+                                    <h4>Detalle</h4>
+                                    <textarea name="accesorios" id="accesorios" readOnly></textarea>
+                                    <div class="conectori">
+                                        <div class="circuloi"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <br />
+
+                            <div className="col derecha">
+                                <h3>Falla o Requerimiento</h3>
+                                <div className="item der">
+                                    <h4>Detalle</h4>
+                                    <textarea name="falla" id="falla" readOnly></textarea>
+                                    <div class="conectord">
+                                        <div class="circulod"></div>
+                                    </div>
+                                </div>
+                                <h3>Estado del Equipo</h3>
+                                <div className="item der">
+                                    <h4>Detalle</h4>
+                                    <textarea name="estado" id="estado" readOnly></textarea>
+                                    <div class="conectord">
+                                        <div class="circulod"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </Container>
-                </div>
+                    </div>
+                </section>
             </Container>
 
         </body>
