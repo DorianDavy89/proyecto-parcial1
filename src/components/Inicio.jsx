@@ -33,11 +33,14 @@ function Inicio() {
 
         <body>
             <div className="titulo">
+                <br />
+                <br />
                 <label>Device Doctor</label>
             </div>
             <br />
+            <br />
             <Container class={`container ${containerActive ? 'active' : ''}`}>
-                <div class="form-container sign-up">
+                {/*<div class="form-container sign-up">
                     <FormControl className="form">
                         <h1>Crear Cuenta</h1>
                         <div class="social-icons">
@@ -48,18 +51,18 @@ function Inicio() {
                         </div>
                         <span>O Usa tu Email para Registrarte</span>
                         <br />
-                        <input id="email-singup" type="email" placeholder="Email"/>
+                        <input id="email-singup" type="email" placeholder="Email" />
                         <br />
-                        <input id="nombre-singup" type="text" placeholder="Nombre"/>
+                        <input id="nombre-singup" type="text" placeholder="Nombre" />
                         <br />
-                        <input id="password-singup" type="password" placeholder="Password"/>
+                        <input id="password-singup" type="password" placeholder="Password" />
                         <br />
                         <div className="button-sing">
                             <Button className="sing" variant="contained">Crear<AccountBoxIcon sx={{ ml: 1 }} /></Button>
                         </div>
 
                     </FormControl>
-                </div>
+    </div>*/}
 
                 <div class="form-container sign-in">
                     <FormControl className="form">
@@ -72,15 +75,15 @@ function Inicio() {
                         </div>
                         <span>O Usa tu User/Password</span>
                         <br />
-                        <input id="email-login" type="text" placeholder="User"/>
+                        <input id="email-login" type="text" placeholder="User" />
                         <br />
-                        <input id="password-login" type="password" placeholder="Password"/>
+                        <input id="password-login" type="password" placeholder="Password" />
                         <br />
-                        <Link href="#" className="forget" underline="none" fontWeight={'bold'} 
-                        color={"#fff"} fontSize={'12px'}>Has Olvidado tu Password?</Link>
+                        <Link href="#" className="forget" underline="none" fontWeight={'bold'}
+                            color={"#fff"} fontSize={'12px'}>Has Olvidado tu Password?</Link>
                         <br />
                         <div className="button-sing">
-                            <Button className="sing" variant="contained">Login<LoginIcon sx={{ ml: 1 }} /></Button>
+                            <Button href="/consulta" className="sing" variant="contained">Login<LoginIcon sx={{ ml: 1 }} /></Button>
                         </div>
                     </FormControl>
                 </div>
@@ -110,15 +113,14 @@ function Inicio() {
                             <br />
                             <h1>Hola, Amigo!</h1>
                             <p>Bienvenido de Regreso</p>
-                            {/*
-                            <Button
+
+                            {/*<Button
                                 variant="contained"
                                 class="hidden"
                                 id="register"
                                 onClick={activateContainer}>
                                 Crear
-                            </Button>
-    */}
+</Button>*/}
                         </div>
                     </div>
                 </div>
