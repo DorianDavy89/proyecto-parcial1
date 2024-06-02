@@ -67,10 +67,10 @@ function Inicio() {
                     <FormControl className="form">
                         <h1>Iniciar Sesion</h1>
                         <div class="social-icons">
-                            <Link href="#" className="icon"><GoogleIcon sx={{ color: '#bc5090' }} /></Link>
-                            <Link href="#" className="icon"><FacebookIcon sx={{ color: '#bc5090' }} /></Link>
-                            <Link href="#" className="icon"><GitHubIcon sx={{ color: '#bc5090' }} /></Link>
-                            <Link href="#" className="icon"><InstagramIcon sx={{ color: '#bc5090' }} /></Link>
+                            <Link href="#" className="icon"><GoogleIcon sx={{ color: '#ff6361' }} /></Link>
+                            <Link href="#" className="icon"><FacebookIcon sx={{ color: '#ff6361' }} /></Link>
+                            <Link href="#" className="icon"><GitHubIcon sx={{ color: '#ff6361' }} /></Link>
+                            <Link href="#" className="icon"><InstagramIcon sx={{ color: '#ff6361' }} /></Link>
                         </div>
                         <span>O Usa tu User/Password</span>
                         <br />

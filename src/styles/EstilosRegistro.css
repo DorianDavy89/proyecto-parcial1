@@ -7,26 +7,11 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    background: linear-gradient(to top, rgb(0, 32, 46), rgb(0, 32, 46))
-}
-
-.btn-acciones {
-    display: inline-flex;
-    gap: 30px;
-}
-
-.name-logo {
-    text-align: left;
-    color: #ffa600;
-    margin-top: -30px;
-}
-
-.titulo-cliente {
-    color: #ffd380;
-}
-
-.icono-salir {
-    text-align: right;
-    margin-top: 30px;
+.cuerpo-registro {
+    background: linear-gradient(to top, rgb(0, 32, 46), rgb(0, 32, 46));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
 }

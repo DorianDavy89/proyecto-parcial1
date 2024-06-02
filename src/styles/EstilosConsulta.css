@@ -9,9 +9,12 @@
 
 
 .cuerpo-consulta {
-    background: linear-gradient(to top, rgb(0, 32, 46), rgb(0, 32, 46))
-    /*height: 100vh;*/
-    /*overflow-y: hidden;*/
+    background: linear-gradient(to top, rgb(0, 32, 46), rgb(0, 32, 46));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 
 .contenido-izq h2 {
