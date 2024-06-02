@@ -152,5 +152,16 @@ textarea {
     box-sizing: border-box;
     width: 80%;
     height: 100px;
+}
 
+.zona-comentario textarea {
+    width: 300px;
+    height: 106px;
+}
+
+.zona-comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

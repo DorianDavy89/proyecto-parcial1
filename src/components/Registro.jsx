@@ -128,7 +128,7 @@ function Registro() {
             <Container className="container-registro">
                 <div className="form-containerRegistro">
                     <div className="icono-salir">
-                        <Link href="#" className="icon-salir" ><LogoutIcon sx={{ fontSize: 35, color: '#ffa600' }}/></Link>
+                        <Link href="/" className="icon-salir" ><LogoutIcon sx={{ fontSize: 35, color: '#ffa600' }}/></Link>
                     </div>
                     <div className="name-logo">
                         <h1>Device Doctor</h1>

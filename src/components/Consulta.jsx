@@ -1,11 +1,17 @@
 import React from "react";
 import Container from '@mui/material/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ImageGallery from "react-image-gallery";
-import AddCommentIcon from '@mui/icons-material/AddComment';
+import DetailsIcon from '@mui/icons-material/Details';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import LogoutIcon from '@mui/icons-material/Logout';
+import DataThresholdingIcon from '@mui/icons-material/DataThresholding';
+import AppSettingsAltIcon from '@mui/icons-material/AppSettingsAlt';
+import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import PaymentIcon from '@mui/icons-material/Payment';
+import CommentIcon from '@mui/icons-material/Comment';
+import SendIcon from '@mui/icons-material/Send';
 import "react-image-gallery/styles/css/image-gallery.css";
 import '../styles/EstilosConsulta.css';
 
@@ -29,7 +35,13 @@ function Consulta() {
                         <h2>Progreso Reparacion</h2>
                         <div className="fila">
                             <div className="col izquierda">
-                                <h3>Datos</h3>
+                                <h3>Datos <DataThresholdingIcon
+                                    style={{
+                                        fontSize: 40,
+                                        color: '#bc5090',
+                                        border: '1px solid #ccc',
+                                        borderRadius: '20%'
+                                    }} /></h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
                                     <textarea name="datos" id="datos" readOnly></textarea>
@@ -37,7 +49,12 @@ function Consulta() {
                                         <div class="circuloi"></div>
                                     </div>
                                 </div>
-                                <h3>Accesorios</h3>
+                                <h3>Accesorios <HeadsetMicIcon style={{
+                                    fontSize: 40,
+                                    color: '#bc5090',
+                                    border: '1px solid #ccc',
+                                    borderRadius: '20%'
+                                }} /></h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
                                     <textarea name="accesorios" id="accesorios" readOnly></textarea>
@@ -45,10 +62,28 @@ function Consulta() {
                                         <div class="circuloi"></div>
                                     </div>
                                 </div>
+                                <h3>Informacion Pago <PaymentIcon style={{
+                                    fontSize: 40,
+                                    color: '#bc5090',
+                                    border: '1px solid #ccc',
+                                    borderRadius: '20%'
+                                }} /></h3>
+                                <div className="item izq">
+                                    <h4>Detalle</h4>
+                                    <textarea name="pago" id="pago" readOnly></textarea>
+                                    <div class="conectori">
+                                        <div class="circuloi"></div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div className="col derecha">
-                                <h3>Falla o Requerimiento</h3>
+                                <h3>Falla o Requerimiento <AppSettingsAltIcon style={{
+                                    fontSize: 40,
+                                    color: '#bc5090',
+                                    border: '1px solid #ccc',
+                                    borderRadius: '20%'
+                                }} /></h3>
                                 <div className="item der">
                                     <h4>Detalle</h4>
                                     <textarea name="falla" id="falla" readOnly></textarea>
@@ -56,10 +91,31 @@ function Consulta() {
                                         <div class="circulod"></div>
                                     </div>
                                 </div>
-                                <h3>Estado del Equipo</h3>
+                                <h3>Estado del Equipo <ConstructionIcon style={{
+                                    fontSize: 40,
+                                    color: '#bc5090',
+                                    border: '1px solid #ccc',
+                                    borderRadius: '20%'
+                                }} /></h3>
                                 <div className="item der">
                                     <h4>Detalle</h4>
                                     <textarea name="estado" id="estado" readOnly></textarea>
+                                    <div class="conectord">
+                                        <div class="circulod"></div>
+                                    </div>
+                                </div>
+                                <h3>Comentario <CommentIcon style={{
+                                    fontSize: 40,
+                                    color: '#bc5090',
+                                    border: '1px solid #ccc',
+                                    borderRadius: '20%'
+                                }} /></h3>
+                                <div className="item der">
+                                    <h4>Comentario</h4>
+                                    <div className="zona-comentario">
+                                        <textarea name="comentario" id="comentario"></textarea>
+                                        <Button className="enviarCom" variant="contained"><SendIcon /></Button>
+                                    </div>
                                     <div class="conectord">
                                         <div class="circulod"></div>
                                     </div>
