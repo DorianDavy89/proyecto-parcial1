@@ -31,13 +31,12 @@ function Inicio() {
 
     return (
 
-        <body>
+        <div className="cuerpo-inicio">
             <div className="titulo">
                 <br />
                 <br />
                 <label>Device Doctor</label>
             </div>
-            <br />
             <br />
             <Container class={`container ${containerActive ? 'active' : ''}`}>
                 {/*<div class="form-container sign-up">
@@ -125,7 +124,7 @@ function Inicio() {
                     </div>
                 </div>
             </Container>
-        </body>
+        </div>
     );
 
 }

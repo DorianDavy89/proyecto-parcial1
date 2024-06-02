@@ -8,10 +8,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    background: linear-gradient(to top, rgba(30, 35, 38, .8), rgba(30, 35, 38, 1)),
-        url('../imagenes/2023071617532164037-1024x585.jpg');
-        background-size: cover;
+.cuerpo-inicio {
+    background: linear-gradient(to top, rgb(0, 32, 46), rgb(0, 32, 46))
 }
 
 .titulo{
@@ -41,7 +39,7 @@ input::placeholder{
 
 .container {
     font-family: Righteous;
-    background-color: #00202e;
+    background-color: #003f5c;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
@@ -95,7 +93,7 @@ input::placeholder{
 }
 
 .form{
-    background-color: #00202e;
+    background-color: #003f5c;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,9 +192,9 @@ input::placeholder{
 }
 
 .toggle {
-    background-color: #00202e;
+    background-color: #2c4875;
     height: 100%;
-    background: linear-gradient(to right, #003f5c, #003f5c);
+    background: linear-gradient(to right, #2c4875, #2c4875);
     color: #fff;
     position: relative;
     left: -100%;

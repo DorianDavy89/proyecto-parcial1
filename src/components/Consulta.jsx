@@ -18,7 +18,7 @@ import '../styles/EstilosConsulta.css';
 function Consulta() {
 
     return (
-        <body>
+        <div className="cuerpo-consulta">
             <Container>
                 <div className="titulo-pagina">
                     <div className="icono-salir">
@@ -26,13 +26,13 @@ function Consulta() {
                     </div>
                     <div className="name-logo">
                         <h1>Device Doctor</h1>
-                        <br />
                     </div>
                 </div>
 
                 <section className="consulta">
                     <div className="contenido-consulta">
                         <h2>Progreso Reparacion</h2>
+                        <br />
                         <div className="fila">
                             <div className="col izquierda">
                                 <h3>Datos <DataThresholdingIcon
@@ -126,7 +126,7 @@ function Consulta() {
                 </section>
             </Container>
 
-        </body>
+        </div>
     );
 }
 
