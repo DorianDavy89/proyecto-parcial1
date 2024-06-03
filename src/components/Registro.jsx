@@ -16,6 +16,11 @@ import { FormControl } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import PasswordIcon from '@mui/icons-material/Password';
+import BadgeIcon from '@mui/icons-material/Badge';
+import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import '../styles/EstilosRegistro.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -45,11 +50,11 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
+    backgroundColor: '#042940',
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
 };
-
 
 function Registro() {
 
@@ -75,12 +80,14 @@ function Registro() {
                     <div className="titulo-cliente">
                         <h1>Registro Cliente</h1>
                     </div>
+                    <br />
                     <div className="boton-nuevo">
                         <Button className="btn-nuevo"
                             variant="contained"
                             color="success"
-                            onClick={() => openModal('Insertar')}>
-                            <CreateNewFolderIcon />
+                            onClick={() => openModal('Insertar')}
+                            endIcon={<CreateNewFolderIcon />}>
+                            New
                         </Button>
                         <br />
                         <br />
@@ -108,7 +115,7 @@ function Registro() {
                                     <StyledTableCell align="center">Realme 7</StyledTableCell>
                                     <StyledTableCell align="center">Editar</StyledTableCell>
                                 </StyledTableRow>
-                                
+
 
                             </TableBody>
                         </Table>
@@ -123,33 +130,39 @@ function Registro() {
                 <Modal open={openNuevo}>
                     <div className="formulario-nuevo">
                         <Box sx={style}>
-                            <FormControl>
-                                <h2>Nuevo Cliente</h2>
-                                <label>Usuario</label>
-                                <input type="text" name='usuario'/>
-                                <br />
-                                <label>Contraseña</label>
-                                <input type="text" name='contrasena'/>
-                                <br />
-                                <label>Cedula</label>
-                                <input type="text" name='cedula'/>
-                                <br />
-                                <label>Nombre</label>
-                                <input type="text" name='nombre'/>
-                                <br />
-                                <label>Marca Telefono</label>
-                                <input type="text" name='marcatelefono'/>
-                                <br />
-                                <div className="botones-formnuevo">
-                                    <Button className="btn-registrar" variant="contained">
-                                        Ingresar
-                                    </Button>
-                                    <Button className="btn-cancelarRegistro" variant="contained"
-                                        onClick={() => setOpenNuevo(false)}>
-                                        Cancelar
-                                    </Button>
+                            <div className="lado-iz">
+                                <FormControl>
+                                    <h2>Nuevo Cliente</h2>
+                                    <br />
+                                    <input type="text" name='usuario' placeholder="Ingrese Usuario" />
+                                    <br />
+                                    <input type="text" name='contrasena' placeholder="Ingrese Password" />
+                                    <br />
+                                    <input type="text" name='cedula' placeholder="Ingrese Cedula" />
+                                    <br />
+                                    <input type="text" name='nombre' placeholder="Ingrese Nombre" />
+                                    <br />
+                                    <input type="text" name='marcatelefono' placeholder="Ingrese Marca Telefono" />
+                                    <br />
+                                    <div className="botones-formnuevo">
+                                        <Button className="btn-registrar" variant="contained" color="success">
+                                            Ingresar
+                                        </Button>
+                                        <Button className="btn-cancelarRegistro" variant="contained" color="info"
+                                            onClick={() => setOpenNuevo(false)}>
+                                            Cancelar
+                                        </Button>
+                                    </div>
+                                </FormControl>
+                                <div className="lado-derecho">
+                                    <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                    <EmojiEmotionsIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                    <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                    <PasswordIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                    <AssignmentIndIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                                 </div>
-                            </FormControl>
+                            </div>
+
                         </Box>
                     </div>
                 </Modal>

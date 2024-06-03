@@ -33,8 +33,6 @@ function Inicio() {
 
         <div className="cuerpo-inicio">
             <div className="titulo">
-                <br />
-                <br />
                 <label>Device Doctor</label>
             </div>
             <br />
@@ -82,7 +80,7 @@ function Inicio() {
                             color={"#fff"} fontSize={'12px'}>Has Olvidado tu Password?</Link>
                         <br />
                         <div className="button-sing">
-                            <Button href="/registro" className="sing" variant="contained">Login<LoginIcon sx={{ ml: 1 }} /></Button>
+                            <Button href="/registro" className="sing" variant="contained" color="success" >Login<LoginIcon sx={{ ml: 1 }} /></Button>
                         </div>
                     </FormControl>
                 </div>
