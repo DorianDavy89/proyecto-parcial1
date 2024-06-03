@@ -65,7 +65,7 @@ function Registro() {
             <Container>
                 <div className="contenido-cabecera">
                     <div className="icono-salir">
-                        <Link href="/" className="icon-salir" ><LogoutIcon sx={{ fontSize: 35, color: '#ffa600' }} /></Link>
+                        <a href="/"><LogoutIcon sx={{ fontSize: 35, color: '#ffa600' }} /></a>
                     </div>
                     <div className="name-logo">
                         <h1>Device Doctor</h1>
@@ -96,6 +96,7 @@ function Registro() {
                                     <StyledTableCell align="center">Cedula</StyledTableCell>
                                     <StyledTableCell align="center">Nombre</StyledTableCell>
                                     <StyledTableCell align="center">Modelo Telefono</StyledTableCell>
+                                    <StyledTableCell align="center">Acciones</StyledTableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -105,7 +106,10 @@ function Registro() {
                                     <StyledTableCell align="center">123</StyledTableCell>
                                     <StyledTableCell align="center">Dorian</StyledTableCell>
                                     <StyledTableCell align="center">Realme 7</StyledTableCell>
+                                    <StyledTableCell align="center">Editar</StyledTableCell>
                                 </StyledTableRow>
+                                
+
                             </TableBody>
                         </Table>
                     </TableContainer>
@@ -121,10 +125,20 @@ function Registro() {
                         <Box sx={style}>
                             <FormControl>
                                 <h2>Nuevo Cliente</h2>
-                                <label>ID</label>
-                                <input
-                                    type="text" name='id'
-                                    readOnly />
+                                <label>Usuario</label>
+                                <input type="text" name='usuario'/>
+                                <br />
+                                <label>Contraseña</label>
+                                <input type="text" name='contrasena'/>
+                                <br />
+                                <label>Cedula</label>
+                                <input type="text" name='cedula'/>
+                                <br />
+                                <label>Nombre</label>
+                                <input type="text" name='nombre'/>
+                                <br />
+                                <label>Marca Telefono</label>
+                                <input type="text" name='marcatelefono'/>
                                 <br />
                                 <div className="botones-formnuevo">
                                     <Button className="btn-registrar" variant="contained">

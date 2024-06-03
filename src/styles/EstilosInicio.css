@@ -9,7 +9,7 @@
 }
 
 .cuerpo-inicio {
-    background: linear-gradient(to top, rgb(0, 32, 46), rgb(0, 32, 46));
+    background-color: #00202e;
     display: flex;
     align-items: center;
     justify-content: center;

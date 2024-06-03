@@ -8,10 +8,18 @@
 }
 
 .cuerpo-registro {
-    background: linear-gradient(to top, rgb(0, 32, 46), rgb(0, 32, 46));
+    background-color: #00202e;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.titulo-cliente{
+    color: #bc5090;
+    font-size: 40px;
+}
+
+.titulo-cliente h1{
+    font-family: 'Righteous';
 }
