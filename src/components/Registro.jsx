@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Button from '@mui/material/Button';
 import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
@@ -21,6 +20,10 @@ import PasswordIcon from '@mui/icons-material/Password';
 import BadgeIcon from '@mui/icons-material/Badge';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import AppSettingsAltIcon from '@mui/icons-material/AppSettingsAlt';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
+import HeadphonesBatteryIcon from '@mui/icons-material/HeadphonesBattery';
 import '../styles/EstilosRegistro.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -126,13 +129,26 @@ function Registro() {
                 </div>
             </Container>
 
+
+
             <div className="modal-registroN">
                 <Modal open={openNuevo}>
-                    <div className="formulario-nuevo">
-                        <Box sx={style}>
+                    <Box sx={style}>
+                        <div className="cabecera-registro">
+                            <h2>Nuevo Cliente</h2>
+                        </div>
+                        <div className="iconos-registro">
                             <div className="lado-iz">
+                                <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <EmojiEmotionsIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <PasswordIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <AssignmentIndIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                            </div>
+                        </div>
+                        <div className="formulario-nuevo">
+                            <div className="lado-der">
                                 <FormControl>
-                                    <h2>Nuevo Cliente</h2>
                                     <br />
                                     <input type="text" name='usuario' placeholder="Ingrese Usuario" />
                                     <br />
@@ -143,30 +159,22 @@ function Registro() {
                                     <input type="text" name='nombre' placeholder="Ingrese Nombre" />
                                     <br />
                                     <input type="text" name='marcatelefono' placeholder="Ingrese Marca Telefono" />
-                                    <br />
-                                    <div className="botones-formnuevo">
-                                        <Button className="btn-registrar" variant="contained" color="success">
-                                            Ingresar
-                                        </Button>
-                                        <Button className="btn-cancelarRegistro" variant="contained" color="info"
-                                            onClick={() => setOpenNuevo(false)}>
-                                            Cancelar
-                                        </Button>
-                                    </div>
                                 </FormControl>
-                                <div className="lado-derecho">
-                                    <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                    <EmojiEmotionsIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                    <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                    <PasswordIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                    <AssignmentIndIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                </div>
                             </div>
-
-                        </Box>
-                    </div>
+                        </div>
+                        <div className="botones-formnuevo">
+                            <Button className="btn-registrar" variant="contained" color="success">
+                                Ingresar
+                            </Button>
+                            <Button className="btn-cancelarRegistro" variant="contained" color="info"
+                                onClick={() => setOpenNuevo(false)}>
+                                Cancelar
+                            </Button>
+                        </div>
+                    </Box>
                 </Modal>
             </div>
+
         </div>
     );
 }
