@@ -132,7 +132,7 @@ function Registro() {
 
 
             <div className="modal-registroN">
-                <Modal open={openNuevo}>
+                <Modal >
                     <Box sx={style}>
                         <div className="cabecera-registro">
                             <h2>Nuevo Cliente</h2>
@@ -151,13 +151,13 @@ function Registro() {
                                 <FormControl>
                                     <br />
                                     <input type="text" name='usuario' placeholder="Ingrese Usuario" />
-                                    <br />
+                                    
                                     <input type="text" name='contrasena' placeholder="Ingrese Password" />
-                                    <br />
+                                    
                                     <input type="text" name='cedula' placeholder="Ingrese Cedula" />
-                                    <br />
+                                    
                                     <input type="text" name='nombre' placeholder="Ingrese Nombre" />
-                                    <br />
+                                    
                                     <input type="text" name='marcatelefono' placeholder="Ingrese Marca Telefono" />
                                 </FormControl>
                             </div>
@@ -167,6 +167,46 @@ function Registro() {
                                 Ingresar
                             </Button>
                             <Button className="btn-cancelarRegistro" variant="contained" color="info"
+                                onClick={() => setOpenNuevo(false)}>
+                                Cancelar
+                            </Button>
+                        </div>
+                    </Box>
+                </Modal>
+            </div>
+
+
+
+            <div className="modal-config">
+                <Modal open={openNuevo}>
+                    <Box sx={style}>
+                        <div className="cabecera-config">
+                            <h2>Mantenimiento</h2>
+                        </div>
+                        <div className="iconos-config">
+                            <div className="lado-iz">
+                                <AppSettingsAltIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <HeadphonesBatteryIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <EngineeringIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <CreditCardIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                            </div>
+                        </div>
+                        <div className="formulario-config">
+                            <div className="lado-der">
+                                <FormControl>
+                                    <br />
+                                    <input type="text" name='usuario' placeholder="Ingrese Requerimiento" />  
+                                    <input type="text" name='contrasena' placeholder="Ingrese Accesorios" />
+                                    <input type="text" name='cedula' placeholder="Ingrese Estado Equipo" />
+                                    <input type="text" name='nombre' placeholder="Ingrese Pago" />
+                                </FormControl>
+                            </div>
+                        </div>
+                        <div className="botones-formconfig">
+                            <Button className="btn-registrarconfig" variant="contained" color="success">
+                                Ingresar
+                            </Button>
+                            <Button className="btn-cancelarconfig" variant="contained" color="info"
                                 onClick={() => setOpenNuevo(false)}>
                                 Cancelar
                             </Button>
