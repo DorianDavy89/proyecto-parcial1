@@ -35,13 +35,7 @@ function Consulta() {
                         <br />
                         <div className="fila">
                             <div className="col izquierda">
-                                <h3>Datos <DataThresholdingIcon
-                                    style={{
-                                        fontSize: 40,
-                                        color: '#bc5090',
-                                        border: '1px solid #ccc',
-                                        borderRadius: '20%'
-                                    }} /></h3>
+                                <h3><DataThresholdingIcon style={{ fontSize: 40, color: '#bc5090'}}/> Datos</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
                                     <textarea name="datos" id="datos" readOnly></textarea>
@@ -49,12 +43,7 @@ function Consulta() {
                                         <div class="circuloi"></div>
                                     </div>
                                 </div>
-                                <h3>Accesorios <HeadsetMicIcon style={{
-                                    fontSize: 40,
-                                    color: '#bc5090',
-                                    border: '1px solid #ccc',
-                                    borderRadius: '20%'
-                                }} /></h3>
+                                <h3><HeadsetMicIcon style={{ fontSize: 40, color: '#bc5090'}}/> Accesorios</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
                                     <textarea name="accesorios" id="accesorios" readOnly></textarea>
@@ -62,12 +51,7 @@ function Consulta() {
                                         <div class="circuloi"></div>
                                     </div>
                                 </div>
-                                <h3>Informacion Pago <PaymentIcon style={{
-                                    fontSize: 40,
-                                    color: '#bc5090',
-                                    border: '1px solid #ccc',
-                                    borderRadius: '20%'
-                                }} /></h3>
+                                <h3><PaymentIcon style={{ fontSize: 40, color: '#bc5090' }}/> Informacion Pago</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
                                     <textarea name="pago" id="pago" readOnly></textarea>
@@ -78,12 +62,7 @@ function Consulta() {
                             </div>
 
                             <div className="col derecha">
-                                <h3>Falla o Requerimiento <AppSettingsAltIcon style={{
-                                    fontSize: 40,
-                                    color: '#bc5090',
-                                    border: '1px solid #ccc',
-                                    borderRadius: '20%'
-                                }} /></h3>
+                                <h3><AppSettingsAltIcon style={{ fontSize: 40, color: '#bc5090'}}/> Falla o Requerimiento</h3>
                                 <div className="item der">
                                     <h4>Detalle</h4>
                                     <textarea name="falla" id="falla" readOnly></textarea>
@@ -91,12 +70,7 @@ function Consulta() {
                                         <div class="circulod"></div>
                                     </div>
                                 </div>
-                                <h3>Estado del Equipo <ConstructionIcon style={{
-                                    fontSize: 40,
-                                    color: '#bc5090',
-                                    border: '1px solid #ccc',
-                                    borderRadius: '20%'
-                                }} /></h3>
+                                <h3><ConstructionIcon style={{ fontSize: 40, color: '#bc5090',}}/> Estado del Equipo</h3>
                                 <div className="item der">
                                     <h4>Detalle</h4>
                                     <textarea name="estado" id="estado" readOnly></textarea>
@@ -104,12 +78,7 @@ function Consulta() {
                                         <div class="circulod"></div>
                                     </div>
                                 </div>
-                                <h3>Comentario <CommentIcon style={{
-                                    fontSize: 40,
-                                    color: '#bc5090',
-                                    border: '1px solid #ccc',
-                                    borderRadius: '20%'
-                                }} /></h3>
+                                <h3><CommentIcon style={{ fontSize: 40, color: '#bc5090'}}/> Comentario</h3>
                                 <div className="item der">
                                     <h4>Comentario</h4>
                                     <div className="zona-comentario">

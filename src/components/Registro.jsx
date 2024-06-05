@@ -24,6 +24,8 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 import AppSettingsAltIcon from '@mui/icons-material/AppSettingsAlt';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import HeadphonesBatteryIcon from '@mui/icons-material/HeadphonesBattery';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import '../styles/EstilosRegistro.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -130,20 +132,23 @@ function Registro() {
             </Container>
 
 
+            {/* Modal registro cliente */}
 
             <div className="modal-registroN">
-                <Modal >
+                <Modal open={openNuevo}>
                     <Box sx={style}>
                         <div className="cabecera-registro">
                             <h2>Nuevo Cliente</h2>
                         </div>
                         <div className="iconos-registro">
                             <div className="lado-iz">
-                                <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <EmojiEmotionsIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <PasswordIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                                 <AssignmentIndIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <PasswordIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <EmojiEmotionsIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <AlternateEmailIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <WhatsAppIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                             </div>
                         </div>
                         <div className="formulario-nuevo">
@@ -151,15 +156,14 @@ function Registro() {
                                 <FormControl>
                                     <br />
                                     <input type="text" name='usuario' placeholder="Ingrese Usuario" />
-                                    
                                     <input type="text" name='contrasena' placeholder="Ingrese Password" />
-                                    
                                     <input type="text" name='cedula' placeholder="Ingrese Cedula" />
-                                    
                                     <input type="text" name='nombre' placeholder="Ingrese Nombre" />
-                                    
+                                    <input type="text" name='email' placeholder="Ingrese Email" />
+                                    <input type="text" name='whatsapp' placeholder="Ingrese Whatsapp" />
                                     <input type="text" name='marcatelefono' placeholder="Ingrese Marca Telefono" />
                                 </FormControl>
+                                <br />
                             </div>
                         </div>
                         <div className="botones-formnuevo">
@@ -175,10 +179,62 @@ function Registro() {
                 </Modal>
             </div>
 
+            {/* Final modal registro cliente */}
 
+
+            {/* Modal editar cliente */}
+
+            <div className="modal-editar">
+                <Modal >
+                    <Box sx={style}>
+                        <div className="cabecera-editar">
+                            <h2>Editar Cliente</h2>
+                        </div>
+                        <div className="iconos-editar">
+                            <div className="lado-iz">
+                                <AssignmentIndIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <PasswordIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <EmojiEmotionsIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <AlternateEmailIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <WhatsAppIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                            </div>
+                        </div>
+                        <div className="formulario-nuevo">
+                            <div className="lado-der">
+                                <FormControl>
+                                    <br />
+                                    <input type="text" name='usuario' placeholder="Ingrese Usuario" />
+                                    <input type="text" name='contrasena' placeholder="Ingrese Password" />
+                                    <input type="text" name='cedula' placeholder="Ingrese Cedula" />
+                                    <input type="text" name='nombre' placeholder="Ingrese Nombre" />
+                                    <input type="text" name='email' placeholder="Ingrese Email" />
+                                    <input type="text" name='whatsapp' placeholder="Ingrese Whatsapp" />
+                                    <input type="text" name='marcatelefono' placeholder="Ingrese Marca Telefono" />
+                                </FormControl>
+                                <br />
+                            </div>
+                        </div>
+                        <div className="botones-formnuevo">
+                            <Button className="btn-registrar" variant="contained" color="success">
+                                Editar
+                            </Button>
+                            <Button className="btn-cancelarRegistro" variant="contained" color="info"
+                                onClick={() => setOpenNuevo(false)}>
+                                Cancelar
+                            </Button>
+                        </div>
+                    </Box>
+                </Modal>
+            </div>
+
+            {/* Final modal editar cliente */}
+
+            {/* Modal registrar mantenimiento */}
 
             <div className="modal-config">
-                <Modal open={openNuevo}>
+                <Modal >
                     <Box sx={style}>
                         <div className="cabecera-config">
                             <h2>Mantenimiento</h2>
@@ -195,7 +251,7 @@ function Registro() {
                             <div className="lado-der">
                                 <FormControl>
                                     <br />
-                                    <input type="text" name='usuario' placeholder="Ingrese Requerimiento" />  
+                                    <input type="text" name='usuario' placeholder="Ingrese Requerimiento" />
                                     <input type="text" name='contrasena' placeholder="Ingrese Accesorios" />
                                     <input type="text" name='cedula' placeholder="Ingrese Estado Equipo" />
                                     <input type="text" name='nombre' placeholder="Ingrese Pago" />
@@ -214,6 +270,8 @@ function Registro() {
                     </Box>
                 </Modal>
             </div>
+
+            {/* Final modal registrar mantenimiento */}
 
         </div>
     );
