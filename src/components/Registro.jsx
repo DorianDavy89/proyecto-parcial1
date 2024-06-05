@@ -26,6 +26,8 @@ import CreditCardIcon from '@mui/icons-material/CreditCard';
 import HeadphonesBatteryIcon from '@mui/icons-material/HeadphonesBattery';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import InputAdornment from '@mui/material/InputAdornment';
+import TextField from '@mui/material/TextField';
 import '../styles/EstilosRegistro.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -135,36 +137,58 @@ function Registro() {
             {/* Modal registro cliente */}
 
             <div className="modal-registroN">
-                <Modal open={openNuevo}>
+                <Modal >
                     <Box sx={style}>
                         <div className="cabecera-registro">
                             <h2>Nuevo Cliente</h2>
                         </div>
-                        <div className="iconos-registro">
-                            <div className="lado-iz">
-                                <AssignmentIndIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <PasswordIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <EmojiEmotionsIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <AlternateEmailIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <WhatsAppIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                            </div>
-                        </div>
+                        <br />
                         <div className="formulario-nuevo">
-                            <div className="lado-der">
-                                <FormControl>
-                                    <br />
-                                    <input type="text" name='usuario' placeholder="Ingrese Usuario" />
-                                    <input type="text" name='contrasena' placeholder="Ingrese Password" />
-                                    <input type="text" name='cedula' placeholder="Ingrese Cedula" />
-                                    <input type="text" name='nombre' placeholder="Ingrese Nombre" />
-                                    <input type="text" name='email' placeholder="Ingrese Email" />
-                                    <input type="text" name='whatsapp' placeholder="Ingrese Whatsapp" />
-                                    <input type="text" name='marcatelefono' placeholder="Ingrese Marca Telefono" />
-                                </FormControl>
-                                <br />
-                            </div>
+                            <FormControl>
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <AssignmentIndIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="usuario" label="Usuario" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <PasswordIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="contra" label="Contraseña" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="cedula" label="Cedula" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <EmojiEmotionsIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="nombre" label="Nombre" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2, }}>
+                                    <AlternateEmailIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="email" label="Email" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <WhatsAppIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="whatsapp" label="Whatsapp" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="marca" label="Marca Telefono" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+                            </FormControl>
+                            <br />
+                            <br />
                         </div>
                         <div className="botones-formnuevo">
                             <Button className="btn-registrar" variant="contained" color="success">
@@ -185,36 +209,58 @@ function Registro() {
             {/* Modal editar cliente */}
 
             <div className="modal-editar">
-                <Modal >
+                <Modal open={openNuevo}>
                     <Box sx={style}>
                         <div className="cabecera-editar">
                             <h2>Editar Cliente</h2>
                         </div>
-                        <div className="iconos-editar">
-                            <div className="lado-iz">
-                                <AssignmentIndIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <PasswordIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <EmojiEmotionsIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <AlternateEmailIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <WhatsAppIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                            </div>
-                        </div>
-                        <div className="formulario-nuevo">
-                            <div className="lado-der">
-                                <FormControl>
-                                    <br />
-                                    <input type="text" name='usuario' placeholder="Ingrese Usuario" />
-                                    <input type="text" name='contrasena' placeholder="Ingrese Password" />
-                                    <input type="text" name='cedula' placeholder="Ingrese Cedula" />
-                                    <input type="text" name='nombre' placeholder="Ingrese Nombre" />
-                                    <input type="text" name='email' placeholder="Ingrese Email" />
-                                    <input type="text" name='whatsapp' placeholder="Ingrese Whatsapp" />
-                                    <input type="text" name='marcatelefono' placeholder="Ingrese Marca Telefono" />
-                                </FormControl>
-                                <br />
-                            </div>
+                        <br />
+                        <div className="formulario-editar">
+                            <FormControl>
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <AssignmentIndIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="usuario" label="Usuario" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <PasswordIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="contra" label="Contraseña" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="cedula" label="Cedula" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <EmojiEmotionsIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="nombre" label="Nombre" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <AlternateEmailIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="email" label="Email" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <WhatsAppIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="whatsapp" label="Whatsapp" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+
+                                <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
+                                    <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
+                                    <TextField id="marca" label="Marca Telefono" variant="filled"
+                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                </Box>
+                            </FormControl>
+                            <br />
+                            <br />
                         </div>
                         <div className="botones-formnuevo">
                             <Button className="btn-registrar" variant="contained" color="success">

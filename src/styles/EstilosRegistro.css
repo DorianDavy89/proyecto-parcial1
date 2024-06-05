@@ -15,12 +15,6 @@
   padding: 0;
 }
 
-.modal-registroN {
-  justify-content: space-between;
-  align-items: stretch;
-
-}
-
 .titulo-cliente {
   color: #bc5090;
   font-size: 40px;
@@ -42,42 +36,10 @@
   font-weight: bold;
 }
 
-.lado-iz{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-}
-
-.icono{
-  margin-top: 14px;
-  margin-left: 15px;
-}
-
-.lado-der {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 20px;
-  margin-top: -426px;
-  margin-right: 10px;
-}
-
-.lado-der input {
-  margin-bottom: 10px;
-  width: 100%;
-  padding: 8px;
-}
-
 .botones-formnuevo {
   display: flex;
   gap: 30px;
   margin-left: 50px;
-}
-
-.formulario-nuevo input[type="text"] {
-  width: 200px;
-  margin-bottom: 10px;
 }
 
 .boton-nuevo Button {
@@ -96,21 +58,11 @@
   transform: scale(1.5);
 }
 
-.formulario-config h2 {
-  color: #ffd380;
-  margin-left: 50px;
-  font-weight: bold;
-}
 
 .botones-formconfig {
   display: flex;
   gap: 30px;
   margin-left: 50px;
-}
-
-.formulario-config input[type="text"] {
-  width: 200px;
-  margin-bottom: 10px;
 }
 
 
@@ -126,13 +78,4 @@
   color: #ffd380;
   margin-left: 50px;
   font-weight: bold;
-}
-
-.iconos-config .icono{
-  margin-top: 12px;
-}
-
-.formulario-config .lado-der {
-  margin-top: -262px;
-  
 }
