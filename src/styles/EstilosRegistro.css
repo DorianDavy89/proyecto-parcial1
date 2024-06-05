@@ -26,7 +26,7 @@
 
 .cabecera-registro h2 {
   color: #ffd380;
-  margin-left: 50px;
+  text-align: left;
   font-weight: bold;
 }
 
@@ -62,7 +62,7 @@
 .botones-formconfig {
   display: flex;
   gap: 30px;
-  margin-left: 50px;
+  margin-left: 210px;
 }
 
 
@@ -78,4 +78,14 @@
   color: #ffd380;
   margin-left: 50px;
   font-weight: bold;
+}
+
+.modal-config {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lado-der {
+  margin-left: 340px;
+  margin-top: -236px;
 }

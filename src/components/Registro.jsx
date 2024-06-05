@@ -50,16 +50,31 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     },
 }));
 
-const style = {
+{/* */ }
+
+const styleM = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 735,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    backgroundColor: '#042940',
+    p: 4,
+};
+
+const styleR = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
-    backgroundColor: '#042940',
     border: '2px solid #000',
     boxShadow: 24,
+    backgroundColor: '#042940',
     p: 4,
 };
 
@@ -137,8 +152,8 @@ function Registro() {
             {/* Modal registro cliente */}
 
             <div className="modal-registroN">
-                <Modal >
-                    <Box sx={style}>
+                <Modal>
+                    <Box sx={styleR}>
                         <div className="cabecera-registro">
                             <h2>Nuevo Cliente</h2>
                         </div>
@@ -183,7 +198,7 @@ function Registro() {
 
                                 <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
                                     <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
-                                    <TextField id="marca" label="Marca Telefono" variant="filled"
+                                    <TextField id="marca" label="Modelo Telefono" variant="filled"
                                         sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
                                 </Box>
                             </FormControl>
@@ -209,8 +224,8 @@ function Registro() {
             {/* Modal editar cliente */}
 
             <div className="modal-editar">
-                <Modal open={openNuevo}>
-                    <Box sx={style}>
+                <Modal>
+                    <Box sx={styleR}>
                         <div className="cabecera-editar">
                             <h2>Editar Cliente</h2>
                         </div>
@@ -255,7 +270,7 @@ function Registro() {
 
                                 <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
                                     <PhoneAndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
-                                    <TextField id="marca" label="Marca Telefono" variant="filled"
+                                    <TextField id="marca" label="Modelo Telefono" variant="filled"
                                         sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
                                 </Box>
                             </FormControl>
@@ -280,30 +295,109 @@ function Registro() {
             {/* Modal registrar mantenimiento */}
 
             <div className="modal-config">
-                <Modal >
-                    <Box sx={style}>
+                <Modal open={openNuevo}>
+                    <Box sx={styleM}>
                         <div className="cabecera-config">
                             <h2>Mantenimiento</h2>
                         </div>
-                        <div className="iconos-config">
-                            <div className="lado-iz">
-                                <AppSettingsAltIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <HeadphonesBatteryIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <EngineeringIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                                <CreditCardIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
-                            </div>
+                        <br />
+                        <div className="formulario-mant">
+                            <FormControl>
+                                <div className="lado-iz">
+                                    <Box component="form"
+                                        sx={{
+                                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                                        }}
+                                        noValidate
+                                        autoComplete="off">
+                                        <AppSettingsAltIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                        <TextField
+                                            id="standard-multiline-static" label="Requerimiento" multiline rows={3} variant="filled"
+                                            sx={{
+                                                input: {
+                                                    color: 'black',
+                                                    backgroundColor: '#fff',
+                                                    width: '200px',
+                                                    height: '10px'
+                                                },
+                                                '& .MuiFilledInput-root': {
+                                                    backgroundColor: '#fff', // Fondo del campo de entrada
+                                                },
+                                            }}
+                                        />
+                                    </Box>
+                                    <Box component="form"
+                                        sx={{
+                                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                                        }}
+                                        noValidate
+                                        autoComplete="off">
+                                        <HeadphonesBatteryIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                        <TextField
+                                            id="standard-multiline-static" label="Accesorios" multiline rows={3} variant="filled"
+                                            sx={{
+                                                input: {
+                                                    color: 'black',
+                                                    backgroundColor: '#fff',
+                                                    width: '200px',
+                                                    height: '10px'
+                                                },
+                                                '& .MuiFilledInput-root': {
+                                                    backgroundColor: '#fff', // Fondo del campo de entrada
+                                                },
+                                            }}
+                                        />
+                                    </Box>
+                                </div>
+                                <div className="lado-der">
+                                    <Box className="d1" component="form"
+                                        sx={{
+                                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                                        }}
+                                        noValidate
+                                        autoComplete="off">
+                                        <EngineeringIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                        <TextField
+                                            id="standard-multiline-static" label="Estado Equipo" multiline rows={3} variant="filled"
+                                            sx={{
+                                                input: {
+                                                    color: 'black',
+                                                    backgroundColor: '#fff',
+                                                    width: '200px',
+                                                    height: '10px'
+                                                },
+                                                '& .MuiFilledInput-root': {
+                                                    backgroundColor: '#fff', // Fondo del campo de entrada
+                                                },
+                                            }}
+                                        />
+                                    </Box>
+                                    <Box className="d1" component="form"
+                                        sx={{
+                                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                                        }}
+                                        noValidate
+                                        autoComplete="off">
+                                        <CreditCardIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                                        <TextField
+                                            id="standard-multiline-static" label="Informacion pago" multiline rows={3} variant="filled"
+                                            sx={{
+                                                input: {
+                                                    color: 'black',
+                                                    backgroundColor: '#fff',
+                                                    width: '200px',
+                                                    height: '10px'
+                                                },
+                                                '& .MuiFilledInput-root': {
+                                                    backgroundColor: '#fff', // Fondo del campo de entrada
+                                                },
+                                            }}
+                                        />
+                                    </Box>
+                                </div>
+                            </FormControl>
                         </div>
-                        <div className="formulario-config">
-                            <div className="lado-der">
-                                <FormControl>
-                                    <br />
-                                    <input type="text" name='usuario' placeholder="Ingrese Requerimiento" />
-                                    <input type="text" name='contrasena' placeholder="Ingrese Accesorios" />
-                                    <input type="text" name='cedula' placeholder="Ingrese Estado Equipo" />
-                                    <input type="text" name='nombre' placeholder="Ingrese Pago" />
-                                </FormControl>
-                            </div>
-                        </div>
+                        <br />
                         <div className="botones-formconfig">
                             <Button className="btn-registrarconfig" variant="contained" color="success">
                                 Ingresar
