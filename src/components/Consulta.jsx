@@ -1,7 +1,6 @@
 import React from "react";
 import Container from '@mui/material/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DetailsIcon from '@mui/icons-material/Details';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -12,10 +11,13 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import PaymentIcon from '@mui/icons-material/Payment';
 import CommentIcon from '@mui/icons-material/Comment';
 import SendIcon from '@mui/icons-material/Send';
+import { useParams } from 'react-router-dom';
 import "react-image-gallery/styles/css/image-gallery.css";
 import '../styles/EstilosConsulta.css';
 
 function Consulta() {
+
+    const { id } = useParams();
 
     return (
         <div className="cuerpo-consulta">
@@ -38,7 +40,7 @@ function Consulta() {
                                 <h3><DataThresholdingIcon style={{ fontSize: 40, color: '#bc5090'}}/> Datos</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
-                                    <textarea name="datos" id="datos" readOnly></textarea>
+                                    <textarea name="datos" id="datos" readOnly value={id}></textarea>
                                     <div class="conectori">
                                         <div class="circuloi"></div>
                                     </div>

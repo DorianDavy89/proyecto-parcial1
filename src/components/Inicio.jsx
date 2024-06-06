@@ -9,13 +9,54 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import LoginIcon from '@mui/icons-material/Login';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import logo1 from '../imagenes/_19850dc1-c22c-4629-a862-f2e4853ec30e.jpg';
+import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
 import '../styles/EstilosInicio.css';
 
 
 
 function Inicio() {
+
+    const datos_usuario = [
+        { id: 1, usuario: "administrador", contra: "admin" },
+        { id: 1, usuario: "user01", contra: "user01" },
+    ];
+
+    const [usuario, setUsuario] = useState('');
+    const [contraseña, setContraseña] = useState('');
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        const user = datos_usuario.find(user => user.usuario === usuario && user.contra === contraseña);
+        if (user) {
+            if (user.usuario === "administrador") {
+                Swal.fire({
+                    icon: "success",
+                    title: "Perfecto",
+                    text: "Credenciales Correctas!",
+                    footer: 'Bienvenido'
+                  });
+                navigate('/registro');
+            } else if (user.usuario === "user01") {
+                Swal.fire({
+                    icon: "success",
+                    title: "Perfecto",
+                    text: "Credenciales Correctas!",
+                    footer: 'Bienvenido'
+                  });
+                const parametroUser = user.usuario;
+                navigate(`/consulta/${parametroUser}`);
+            }
+        } else {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Credenciales incorrectas!",
+                footer: 'Vuelve a Revisar'
+              });
+        }
+    };
 
     const [containerActive, setContainerActive] = useState(false);
 
@@ -72,15 +113,17 @@ function Inicio() {
                         </div>
                         <span>O Usa tu User/Password</span>
                         <br />
-                        <input id="email-login" type="text" placeholder="User" />
+                        <input id="user-login" type="text" placeholder="Usuario" value={usuario}
+                            onChange={(e) => setUsuario(e.target.value)} />
                         <br />
-                        <input id="password-login" type="password" placeholder="Password" />
+                        <input id="password-login" type="password" placeholder="Contraseña" value={contraseña}
+                            onChange={(e) => setContraseña(e.target.value)} />
                         <br />
                         <Link href="#" className="forget" underline="none" fontWeight={'bold'}
                             color={"#fff"} fontSize={'12px'}>Has Olvidado tu Password?</Link>
                         <br />
                         <div className="button-sing">
-                            <Button href="/registro" className="sing" variant="contained" color="success" >Login<LoginIcon sx={{ ml: 1 }} /></Button>
+                            <Button className="sing" variant="contained" color="success" onClick={handleLogin} >Login<LoginIcon sx={{ ml: 1 }} /></Button>
                         </div>
                     </FormControl>
                 </div>
