@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from '@mui/material/Container';
 import FormControl from '@mui/material/FormControl';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -18,45 +18,68 @@ import '../styles/EstilosInicio.css';
 
 function Inicio() {
 
-    const datos_usuario = [
-        { id: 1, usuario: "administrador", contra: "admin" },
-        { id: 1, usuario: "user01", contra: "user01" },
-    ];
 
     const [usuario, setUsuario] = useState('');
-    const [contraseña, setContraseña] = useState('');
+    const [contrasena, setContrasena] = useState('');
+    const [mensaje, setMensaje] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        const user = datos_usuario.find(user => user.usuario === usuario && user.contra === contraseña);
-        if (user) {
-            if (user.usuario === "administrador") {
-                Swal.fire({
-                    icon: "success",
-                    title: "Perfecto",
-                    text: "Credenciales Correctas!",
-                    footer: 'Bienvenido'
-                  });
-                navigate('/registro');
-            } else if (user.usuario === "user01") {
-                Swal.fire({
-                    icon: "success",
-                    title: "Perfecto",
-                    text: "Credenciales Correctas!",
-                    footer: 'Bienvenido'
-                  });
-                const parametroUser = user.usuario;
-                navigate(`/consulta/${parametroUser}`);
+    const handleLogin = async () => {
+
+        try {
+            const response = await fetch('http://localhost:3200/validacionLogin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    usuario,
+                    contrasena
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.status === 200) {
+                    if (data.tipoUsuario === 'administrador') {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Perfecto",
+                            text: "Credenciales Correctas!",
+                            footer: 'Bienvenido Administrador'
+                          });
+                        navigate('/registro/');
+                    }
+                    else if (data.tipoUsuario === 'cliente') {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Perfecto",
+                            text: "Credenciales Correctas!",
+                            footer: 'Bienvenido Cliente'
+                          });        
+                        navigate('/consulta/');
+                    }
+                
             }
-        } else {
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Credenciales incorrectas!",
-                footer: 'Vuelve a Revisar'
-              });
+            else if (response.status === 404) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Credenciales incorrectas!",
+                    footer: 'Vuelve a Revisar'
+                  });
+                
+            }
+        } catch (error) {
+            setMensaje('Error al iniciar sesión');
         }
     };
+
+    useEffect(() => {
+        if (mensaje) {
+            alert(mensaje);
+        }
+    }, [mensaje]);
 
     const [containerActive, setContainerActive] = useState(false);
 
@@ -116,8 +139,8 @@ function Inicio() {
                         <input id="user-login" type="text" placeholder="Usuario" value={usuario}
                             onChange={(e) => setUsuario(e.target.value)} />
                         <br />
-                        <input id="password-login" type="password" placeholder="Contraseña" value={contraseña}
-                            onChange={(e) => setContraseña(e.target.value)} />
+                        <input id="password-login" type="password" placeholder="Contraseña" value={contrasena}
+                            onChange={(e) => setContrasena(e.target.value)} />
                         <br />
                         <Link href="#" className="forget" underline="none" fontWeight={'bold'}
                             color={"#fff"} fontSize={'12px'}>Has Olvidado tu Password?</Link>

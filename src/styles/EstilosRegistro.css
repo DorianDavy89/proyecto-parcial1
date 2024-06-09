@@ -58,6 +58,13 @@
   transform: scale(1.5);
 }
 
+.btn-acciones Button {
+  transition: all 0.50s;
+}
+
+.btn-acciones Button:hover {
+  transform: scale(1.5);
+}
 
 .botones-formconfig {
   display: flex;

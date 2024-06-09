@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Container from '@mui/material/Container';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Button from '@mui/material/Button';
@@ -27,6 +27,9 @@ import HeadphonesBatteryIcon from '@mui/icons-material/HeadphonesBattery';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InputAdornment from '@mui/material/InputAdornment';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import SettingsIcon from '@mui/icons-material/Settings';
 import TextField from '@mui/material/TextField';
 import '../styles/EstilosRegistro.css';
 
@@ -80,10 +83,28 @@ const styleR = {
 
 function Registro() {
 
+    const url_datosUsuario = 'http://localhost:3200/usuarios';
+    const [datosUsuario, setDatosUsuario] = useState([]);
+
+    const apiDatos = async () => {
+        const response = await fetch(url_datosUsuario);
+        const data_response = await response.json();
+
+        if (data_response.success)
+            setDatosUsuario(data_response.data)
+        console.log(data_response);
+    }
+
+    useEffect(() => { apiDatos() }, []);
+
     const [openNuevo, setOpenNuevo] = useState(false);
+    const [openEditar, setOpenEditar] = useState(false);
+    const [openConfig, setOpenConfig] = useState(false);
 
     const openModal = (tipo) => {
         (tipo === 'Insertar') && setOpenNuevo(true);
+        (tipo === 'Editar') && setOpenEditar(true);
+        (tipo === 'Config') && setOpenConfig(true);
     };
 
 
@@ -124,20 +145,36 @@ function Registro() {
                                     <StyledTableCell align="center">Usuario</StyledTableCell>
                                     <StyledTableCell align="center">Cedula</StyledTableCell>
                                     <StyledTableCell align="center">Nombre</StyledTableCell>
-                                    <StyledTableCell align="center">Modelo Telefono</StyledTableCell>
+                                    <StyledTableCell align="center">Modelo Tel.</StyledTableCell>
+                                    <StyledTableCell align="center">Whatsapp</StyledTableCell>
+                                    <StyledTableCell align="center">Correo</StyledTableCell>
                                     <StyledTableCell align="center">Acciones</StyledTableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                <StyledTableRow>
-                                    <StyledTableCell align="center">01</StyledTableCell>
-                                    <StyledTableCell align="center">user1</StyledTableCell>
-                                    <StyledTableCell align="center">123</StyledTableCell>
-                                    <StyledTableCell align="center">Dorian</StyledTableCell>
-                                    <StyledTableCell align="center">Realme 7</StyledTableCell>
-                                    <StyledTableCell align="center">Editar</StyledTableCell>
-                                </StyledTableRow>
-
+                                {
+                                    datosUsuario.map((dato, index) => {
+                                        return <StyledTableRow key={index}>
+                                            <StyledTableCell align="center">{dato.ID_USER}</StyledTableCell>
+                                            <StyledTableCell align="center">{dato.USUARIO}</StyledTableCell>
+                                            <StyledTableCell align="center">{dato.CEDULA}</StyledTableCell>
+                                            <StyledTableCell align="center">{dato.NOMBRE}</StyledTableCell>
+                                            <StyledTableCell align="center">{dato.MARCA_TELEFONO}</StyledTableCell>
+                                            <StyledTableCell align="center">{dato.WHATSAPP}</StyledTableCell>
+                                            <StyledTableCell align="center">{dato.CORREO}</StyledTableCell>
+                                            <StyledTableCell align="center">
+                                                <div className="btn-acciones">
+                                                    <Button
+                                                        onClick={() => openModal('Editar')}> <EditIcon></EditIcon>
+                                                    </Button>
+                                                    <Button> <DeleteForeverIcon></DeleteForeverIcon> </Button>
+                                                    <Button
+                                                        onClick={() => openModal('Config')}> <SettingsIcon></SettingsIcon>
+                                                    </Button>
+                                                </div>
+                                            </StyledTableCell>
+                                        </StyledTableRow>
+                                    })}
 
                             </TableBody>
                         </Table>
@@ -152,7 +189,7 @@ function Registro() {
             {/* Modal registro cliente */}
 
             <div className="modal-registroN">
-                <Modal>
+                <Modal open={openNuevo}>
                     <Box sx={styleR}>
                         <div className="cabecera-registro">
                             <h2>Nuevo Cliente</h2>
@@ -224,7 +261,7 @@ function Registro() {
             {/* Modal editar cliente */}
 
             <div className="modal-editar">
-                <Modal>
+                <Modal open={openEditar}>
                     <Box sx={styleR}>
                         <div className="cabecera-editar">
                             <h2>Editar Cliente</h2>
@@ -282,7 +319,7 @@ function Registro() {
                                 Editar
                             </Button>
                             <Button className="btn-cancelarRegistro" variant="contained" color="info"
-                                onClick={() => setOpenNuevo(false)}>
+                                onClick={() => setOpenEditar(false)}>
                                 Cancelar
                             </Button>
                         </div>
@@ -295,7 +332,7 @@ function Registro() {
             {/* Modal registrar mantenimiento */}
 
             <div className="modal-config">
-                <Modal open={openNuevo}>
+                <Modal open={openConfig}>
                     <Box sx={styleM}>
                         <div className="cabecera-config">
                             <h2>Mantenimiento</h2>
@@ -315,7 +352,7 @@ function Registro() {
                                             id="standard-multiline-static" label="Requerimiento" multiline rows={3} variant="filled"
                                             sx={{
                                                 input: {
-                                                    color: 'black',
+                                                    color: 'white',
                                                     backgroundColor: '#fff',
                                                     width: '200px',
                                                     height: '10px'
@@ -337,7 +374,7 @@ function Registro() {
                                             id="standard-multiline-static" label="Accesorios" multiline rows={3} variant="filled"
                                             sx={{
                                                 input: {
-                                                    color: 'black',
+                                                    color: 'white',
                                                     backgroundColor: '#fff',
                                                     width: '200px',
                                                     height: '10px'
@@ -361,7 +398,7 @@ function Registro() {
                                             id="standard-multiline-static" label="Estado Equipo" multiline rows={3} variant="filled"
                                             sx={{
                                                 input: {
-                                                    color: 'black',
+                                                    color: 'white',
                                                     backgroundColor: '#fff',
                                                     width: '200px',
                                                     height: '10px'
@@ -383,7 +420,7 @@ function Registro() {
                                             id="standard-multiline-static" label="Informacion pago" multiline rows={3} variant="filled"
                                             sx={{
                                                 input: {
-                                                    color: 'black',
+                                                    color: 'white',
                                                     backgroundColor: '#fff',
                                                     width: '200px',
                                                     height: '10px'
@@ -403,7 +440,7 @@ function Registro() {
                                 Ingresar
                             </Button>
                             <Button className="btn-cancelarconfig" variant="contained" color="info"
-                                onClick={() => setOpenNuevo(false)}>
+                                onClick={() => setOpenConfig(false)}>
                                 Cancelar
                             </Button>
                         </div>
