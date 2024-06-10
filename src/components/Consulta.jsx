@@ -12,12 +12,66 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import CommentIcon from '@mui/icons-material/Comment';
 import SendIcon from '@mui/icons-material/Send';
 import { useParams } from 'react-router-dom';
+import { useState } from "react";
+import Swal from 'sweetalert2';
 import "react-image-gallery/styles/css/image-gallery.css";
 import '../styles/EstilosConsulta.css';
 
 function Consulta() {
 
     const { idUsuario, requerimientoUsuario, accesoriosUsuario, estadoEquipoUsuario, pagoUsuario } = useParams();
+
+    const [comentario, setComentario] = useState('');
+
+    const actualizarComentario = async () => {
+
+        try {
+            const response = await fetch(`http://localhost:3200/actualizarComentario/${idUsuario}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    COMENTARIO: comentario
+                })
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+
+                Swal.fire({
+                    icon: "success",
+                    title: "Perfecto",
+                    text: "Comentario enviado!",
+                    footer: 'Puede Seguir Revisando'
+                });
+            }
+            else if (response.status === 404) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Algo salio mal!",
+                    footer: 'Vuelve a Revisar'
+                });
+
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Algo salio mal!",
+                footer: 'Vuelve a Revisar'
+            });
+        }
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        actualizarComentario();
+        setTimeout(() => {
+        }, 2000);
+        
+    };
 
     return (
         <div className="cuerpo-consulta">
@@ -37,7 +91,7 @@ function Consulta() {
                         <br />
                         <div className="fila">
                             <div className="col izquierda">
-                                <h3><DataThresholdingIcon style={{ fontSize: 40, color: '#bc5090'}}/> Datos</h3>
+                                <h3><DataThresholdingIcon style={{ fontSize: 40, color: '#bc5090' }} /> Datos</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
                                     <textarea name="datos" id="datos" readOnly value={idUsuario}></textarea>
@@ -45,7 +99,7 @@ function Consulta() {
                                         <div class="circuloi"></div>
                                     </div>
                                 </div>
-                                <h3><HeadsetMicIcon style={{ fontSize: 40, color: '#bc5090'}}/> Accesorios</h3>
+                                <h3><HeadsetMicIcon style={{ fontSize: 40, color: '#bc5090' }} /> Accesorios</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
                                     <textarea name="accesorios" id="accesorios" readOnly value={accesoriosUsuario}></textarea>
@@ -53,7 +107,7 @@ function Consulta() {
                                         <div class="circuloi"></div>
                                     </div>
                                 </div>
-                                <h3><PaymentIcon style={{ fontSize: 40, color: '#bc5090' }}/> Informacion Pago</h3>
+                                <h3><PaymentIcon style={{ fontSize: 40, color: '#bc5090' }} /> Informacion Pago</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
                                     <textarea name="pago" id="pago" readOnly value={pagoUsuario}></textarea>
@@ -64,7 +118,7 @@ function Consulta() {
                             </div>
 
                             <div className="col derecha">
-                                <h3><AppSettingsAltIcon style={{ fontSize: 40, color: '#bc5090'}}/> Falla o Requerimiento</h3>
+                                <h3><AppSettingsAltIcon style={{ fontSize: 40, color: '#bc5090' }} /> Falla o Requerimiento</h3>
                                 <div className="item der">
                                     <h4>Detalle</h4>
                                     <textarea name="falla" id="falla" readOnly value={requerimientoUsuario}></textarea>
@@ -72,7 +126,7 @@ function Consulta() {
                                         <div class="circulod"></div>
                                     </div>
                                 </div>
-                                <h3><ConstructionIcon style={{ fontSize: 40, color: '#bc5090',}}/> Estado de Reparacion</h3>
+                                <h3><ConstructionIcon style={{ fontSize: 40, color: '#bc5090', }} /> Estado de Reparacion</h3>
                                 <div className="item der">
                                     <h4>Detalle</h4>
                                     <textarea name="estado" id="estado" readOnly value={estadoEquipoUsuario}></textarea>
@@ -80,12 +134,12 @@ function Consulta() {
                                         <div class="circulod"></div>
                                     </div>
                                 </div>
-                                <h3><CommentIcon style={{ fontSize: 40, color: '#bc5090'}}/> Comentario</h3>
+                                <h3><CommentIcon style={{ fontSize: 40, color: '#bc5090' }} /> Comentario</h3>
                                 <div className="item der">
                                     <h4>Comentario</h4>
                                     <div className="zona-comentario">
-                                        <textarea name="comentario" id="comentario"></textarea>
-                                        <Button className="enviarCom" variant="contained"><SendIcon /></Button>
+                                        <textarea name="comentario" id="comentario" value={comentario} onChange={(e) => setComentario(e.target.value)}></textarea>
+                                        <Button className="enviarCom" variant="contained" onClick={handleSubmit} ><SendIcon /></Button>
                                     </div>
                                     <div class="conectord">
                                         <div class="circulod"></div>

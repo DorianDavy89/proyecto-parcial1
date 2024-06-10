@@ -13,7 +13,6 @@ import Paper from '@mui/material/Paper';
 import Modal from '@mui/material/Modal';
 import { FormControl } from "@mui/material";
 import { styled } from '@mui/material/styles';
-import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import PasswordIcon from '@mui/icons-material/Password';
@@ -31,13 +30,14 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AndroidIcon from '@mui/icons-material/Android';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import ReviewsIcon from '@mui/icons-material/Reviews';
 import TextField from '@mui/material/TextField';
 import '../styles/EstilosRegistro.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-        backgroundColor: theme.palette.common.black,
+        backgroundColor: '#003f5c',
         color: theme.palette.common.white,
     },
     [`&.${tableCellClasses.body}`]: {
@@ -65,7 +65,7 @@ const styleM = {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    backgroundColor: '#042940',
+    backgroundColor: '#ffe9c0',
     p: 4,
 };
 
@@ -87,11 +87,11 @@ const styleE = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 735,
+    width: 400,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    backgroundColor: '#042940',
+    backgroundColor: '#ffe9c0',
     p: 4,
     color: 'white'
 };
@@ -136,6 +136,7 @@ function Registro() {
     const [email, setEmail] = useState('');
     const [whatsapp, setWhatsapp] = useState('');
     const [marca, setMarca] = useState('');
+
 
     const crearCliente = async () => {
 
@@ -438,16 +439,14 @@ function Registro() {
                                                     <Button
                                                         onClick={() => openModal(dato, 'Config')}> <SettingsIcon></SettingsIcon>
                                                     </Button>
+                                                    <Button> <ReviewsIcon></ReviewsIcon> </Button>
                                                 </div>
                                             </StyledTableCell>
                                         </StyledTableRow>
                                     })}
-
                             </TableBody>
                         </Table>
                     </TableContainer>
-                    <Alert variant="filled" severity="success" color='primary'>
-                    </Alert>
                     <br />
                 </div>
             </Container>
@@ -637,7 +636,7 @@ function Registro() {
                                 <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
                                     <AndroidIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
                                     <TextField id="id_usuario" label="ID" variant="filled" value={seleccionarDato && seleccionarDato.ID_USER} InputProps={{ readOnly: true }}
-                                        sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                        sx={{ input: { color: 'black', width: '200px', height: '10px' } }} />
                                 </Box>
                                 <div className="lado-iz">
                                     <Box component="form"
@@ -648,21 +647,12 @@ function Registro() {
                                         autoComplete="off">
                                         <AppSettingsAltIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                                         <TextField
-                                            id="standard-multiline-static" label="Requerimiento" multiline rows={3} variant="filled"
+                                            id="standard-multiline-static" label="Requerimiento" multiline={true} 
+                                            rows={3} variant="filled"
                                             value={seleccionarConfig && seleccionarConfig.REQUERIMIENTO}
                                             name="REQUERIMIENTO"
                                             onChange={handleChangeConfiInput}
-                                            sx={{
-                                                input: {
-                                                    color: 'white',
-                                                    backgroundColor: '#fff',
-                                                    width: '200px',
-                                                    height: '10px'
-                                                },
-                                                '& .MuiFilledInput-root': {
-                                                    backgroundColor: 'white',
-                                                },
-                                            }}
+                                            inputProps={{ style: {color: 'black', }}}
                                         />
                                     </Box>
                                     <Box component="form"
@@ -673,21 +663,12 @@ function Registro() {
                                         autoComplete="off">
                                         <HeadphonesBatteryIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                                         <TextField
-                                            id="standard-multiline-static" label="Accesorios" multiline rows={3} variant="filled"
+                                            id="standard-multiline-static" label="Accesorios" multiline={true} 
+                                            rows={3} variant="filled"
                                             value={seleccionarConfig && seleccionarConfig.ACCESORIOS}
                                             name="ACCESORIOS"
                                             onChange={handleChangeConfiInput}
-                                            sx={{
-                                                input: {
-                                                    color: 'white',
-                                                    backgroundColor: '#fff',
-                                                    width: '200px',
-                                                    height: '10px'
-                                                },
-                                                '& .MuiFilledInput-root': {
-                                                    backgroundColor: 'white',
-                                                },
-                                            }}
+                                            inputProps={{ style: {color: 'black' }}}
                                         />
                                     </Box>
                                 </div>
@@ -700,21 +681,12 @@ function Registro() {
                                         autoComplete="off">
                                         <EngineeringIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                                         <TextField
-                                            id="standard" label="Estado Equipo" multiline rows={3} variant="filled"
+                                            id="standard" label="Estado Equipo" multiline={true} 
+                                            rows={3} variant="filled"
                                             value={seleccionarConfig && seleccionarConfig.ESTADO_EQUIPO}
                                             name="ESTADO_EQUIPO"
                                             onChange={handleChangeConfiInput}
-                                            sx={{
-                                                input: {
-                                                    color: 'white',
-                                                    backgroundColor: '#fff',
-                                                    width: '200px',
-                                                    height: '10px'
-                                                },
-                                                '& .MuiFilledInput-root': {
-                                                    backgroundColor: 'white',
-                                                },
-                                            }}
+                                            inputProps={{ style: {color: 'black' }}}
                                         />
                                     </Box>
                                     <Box component="form"
@@ -725,21 +697,12 @@ function Registro() {
                                         autoComplete="off">
                                         <CreditCardIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                                         <TextField
-                                            id="standard-multiline-static" label="Informacion pago" multiline rows={3} variant="filled"
+                                            id="standard-multiline-static" label="Informacion pago" multiline={true} 
+                                            rows={3} variant="filled"
                                             value={seleccionarConfig && seleccionarConfig.PAGO}
                                             name="PAGO"
                                             onChange={handleChangeConfiInput}
-                                            sx={{
-                                                input: {
-                                                    color: 'white',
-                                                    backgroundColor: '#fff',
-                                                    width: '200px',
-                                                    height: '10px'
-                                                },
-                                                '& .MuiFilledInput-root': {
-                                                    backgroundColor: 'white',
-                                                },
-                                            }}
+                                            inputProps={{ style: {color: 'black' }}}
                                         />
                                     </Box>
                                 </div>
@@ -768,7 +731,7 @@ function Registro() {
                         <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
                             <HighlightOffIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
                             <TextField id="usuario" label="Eliminar Usuario?" variant="filled" value={seleccionarDato && seleccionarDato.ID_USER} InputProps={{ readOnly: true }}
-                                sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
+                                sx={{ input: { color: 'black', width: '200px', height: '10px' } }} />
                         </Box>
                     </FormControl>
                     <div className="botones-formnuevo">
