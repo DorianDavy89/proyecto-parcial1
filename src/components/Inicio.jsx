@@ -57,7 +57,8 @@ function Inicio() {
                             text: "Credenciales Correctas!",
                             footer: 'Bienvenido Cliente'
                           });        
-                        navigate('/consulta/');
+                        navigate(`/consulta/${data.idUsuario}/${data.requerimientoUsuario}/
+                            ${data.accesoriosUsuario}/${data.estadoEquipoUsuario}/${data.pagoUsuario}`);
                     }
                 
             }

@@ -17,7 +17,7 @@ import '../styles/EstilosConsulta.css';
 
 function Consulta() {
 
-    const { id } = useParams();
+    const { idUsuario, requerimientoUsuario, accesoriosUsuario, estadoEquipoUsuario, pagoUsuario } = useParams();
 
     return (
         <div className="cuerpo-consulta">
@@ -40,7 +40,7 @@ function Consulta() {
                                 <h3><DataThresholdingIcon style={{ fontSize: 40, color: '#bc5090'}}/> Datos</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
-                                    <textarea name="datos" id="datos" readOnly value={id}></textarea>
+                                    <textarea name="datos" id="datos" readOnly value={idUsuario}></textarea>
                                     <div class="conectori">
                                         <div class="circuloi"></div>
                                     </div>
@@ -48,7 +48,7 @@ function Consulta() {
                                 <h3><HeadsetMicIcon style={{ fontSize: 40, color: '#bc5090'}}/> Accesorios</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
-                                    <textarea name="accesorios" id="accesorios" readOnly></textarea>
+                                    <textarea name="accesorios" id="accesorios" readOnly value={accesoriosUsuario}></textarea>
                                     <div class="conectori">
                                         <div class="circuloi"></div>
                                     </div>
@@ -56,7 +56,7 @@ function Consulta() {
                                 <h3><PaymentIcon style={{ fontSize: 40, color: '#bc5090' }}/> Informacion Pago</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
-                                    <textarea name="pago" id="pago" readOnly></textarea>
+                                    <textarea name="pago" id="pago" readOnly value={pagoUsuario}></textarea>
                                     <div class="conectori">
                                         <div class="circuloi"></div>
                                     </div>
@@ -67,15 +67,15 @@ function Consulta() {
                                 <h3><AppSettingsAltIcon style={{ fontSize: 40, color: '#bc5090'}}/> Falla o Requerimiento</h3>
                                 <div className="item der">
                                     <h4>Detalle</h4>
-                                    <textarea name="falla" id="falla" readOnly></textarea>
+                                    <textarea name="falla" id="falla" readOnly value={requerimientoUsuario}></textarea>
                                     <div class="conectord">
                                         <div class="circulod"></div>
                                     </div>
                                 </div>
-                                <h3><ConstructionIcon style={{ fontSize: 40, color: '#bc5090',}}/> Estado del Equipo</h3>
+                                <h3><ConstructionIcon style={{ fontSize: 40, color: '#bc5090',}}/> Estado de Reparacion</h3>
                                 <div className="item der">
                                     <h4>Detalle</h4>
-                                    <textarea name="estado" id="estado" readOnly></textarea>
+                                    <textarea name="estado" id="estado" readOnly value={estadoEquipoUsuario}></textarea>
                                     <div class="conectord">
                                         <div class="circulod"></div>
                                     </div>
