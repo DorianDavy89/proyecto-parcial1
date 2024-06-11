@@ -116,8 +116,9 @@ function Registro() {
     const [openEditar, setOpenEditar] = useState(false);
     const [openConfig, setOpenConfig] = useState(false);
     const [openEliminar, setOpenEliminar] = useState(false);
+    const [openComentario, setOpenComentario] = useState(false);
     const [seleccionarDato, setSeleccionarDato] = useState({ ID_USER: 0, USUARIO: "", PASWORD: "", CEDULA: "", NOMBRE: "", CORREO: "", WHATSAPP: "", MARCA_TELEFONO: "" });
-    const [seleccionarConfig, setSeleccionarConfig] = useState({ ID_USER: 0, REQUERIMIENTO: "", ACCESORIOS: "", ESTADO_EQUIPO: "", PAGO: "" });
+    const [seleccionarConfig, setSeleccionarConfig] = useState({ ID_USER: 0, REQUERIMIENTO: "", ACCESORIOS: "", ESTADO_EQUIPO: "", PAGO: "", COMENTARIO: "" });
 
 
     const openModal = (datos, tipo) => {
@@ -127,6 +128,7 @@ function Registro() {
         (tipo === 'Editar') && setOpenEditar(true);
         (tipo === 'Config') && setOpenConfig(true);
         (tipo === 'Eliminar') && setOpenEliminar(true);
+        (tipo === 'Comentario') && setOpenComentario(true);
     };
 
     const [usuario, setUsuario] = useState('');
@@ -428,6 +430,7 @@ function Registro() {
                                             <StyledTableCell style={{ display: 'none' }}>{dato.ACCESORIOS}</StyledTableCell>
                                             <StyledTableCell style={{ display: 'none' }}>{dato.ESTADO_EQUIPO}</StyledTableCell>
                                             <StyledTableCell style={{ display: 'none' }}>{dato.PAGO}</StyledTableCell>
+                                            <StyledTableCell style={{ display: 'none' }}>{dato.COMENTARIO}</StyledTableCell>
                                             <StyledTableCell align="center">
                                                 <div className="btn-acciones">
                                                     <Button
@@ -439,7 +442,9 @@ function Registro() {
                                                     <Button
                                                         onClick={() => openModal(dato, 'Config')}> <SettingsIcon></SettingsIcon>
                                                     </Button>
-                                                    <Button> <ReviewsIcon></ReviewsIcon> </Button>
+                                                    <Button
+                                                        onClick={() => openModal(dato, 'Comentario')}><ReviewsIcon></ReviewsIcon>
+                                                    </Button>
                                                 </div>
                                             </StyledTableCell>
                                         </StyledTableRow>
@@ -647,12 +652,12 @@ function Registro() {
                                         autoComplete="off">
                                         <AppSettingsAltIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                                         <TextField
-                                            id="standard-multiline-static" label="Requerimiento" multiline={true} 
+                                            id="standard-multiline-static" label="Requerimiento" multiline={true}
                                             rows={3} variant="filled"
                                             value={seleccionarConfig && seleccionarConfig.REQUERIMIENTO}
                                             name="REQUERIMIENTO"
                                             onChange={handleChangeConfiInput}
-                                            inputProps={{ style: {color: 'black', }}}
+                                            inputProps={{ style: { color: 'black', } }}
                                         />
                                     </Box>
                                     <Box component="form"
@@ -663,12 +668,12 @@ function Registro() {
                                         autoComplete="off">
                                         <HeadphonesBatteryIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                                         <TextField
-                                            id="standard-multiline-static" label="Accesorios" multiline={true} 
+                                            id="standard-multiline-static" label="Accesorios" multiline={true}
                                             rows={3} variant="filled"
                                             value={seleccionarConfig && seleccionarConfig.ACCESORIOS}
                                             name="ACCESORIOS"
                                             onChange={handleChangeConfiInput}
-                                            inputProps={{ style: {color: 'black' }}}
+                                            inputProps={{ style: { color: 'black' } }}
                                         />
                                     </Box>
                                 </div>
@@ -681,12 +686,12 @@ function Registro() {
                                         autoComplete="off">
                                         <EngineeringIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                                         <TextField
-                                            id="standard" label="Estado Equipo" multiline={true} 
+                                            id="standard" label="Estado Equipo" multiline={true}
                                             rows={3} variant="filled"
                                             value={seleccionarConfig && seleccionarConfig.ESTADO_EQUIPO}
                                             name="ESTADO_EQUIPO"
                                             onChange={handleChangeConfiInput}
-                                            inputProps={{ style: {color: 'black' }}}
+                                            inputProps={{ style: { color: 'black' } }}
                                         />
                                     </Box>
                                     <Box component="form"
@@ -697,12 +702,12 @@ function Registro() {
                                         autoComplete="off">
                                         <CreditCardIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
                                         <TextField
-                                            id="standard-multiline-static" label="Informacion pago" multiline={true} 
+                                            id="standard-multiline-static" label="Informacion pago" multiline={true}
                                             rows={3} variant="filled"
                                             value={seleccionarConfig && seleccionarConfig.PAGO}
                                             name="PAGO"
                                             onChange={handleChangeConfiInput}
-                                            inputProps={{ style: {color: 'black' }}}
+                                            inputProps={{ style: { color: 'black' } }}
                                         />
                                     </Box>
                                 </div>
@@ -725,6 +730,9 @@ function Registro() {
             {/* Final modal registrar mantenimiento */}
 
 
+
+            {/* Modal Eliminar */}
+
             <Modal open={openEliminar}>
                 <Box sx={styleE}>
                     <FormControl>
@@ -745,6 +753,42 @@ function Registro() {
                     </div>
                 </Box>
             </Modal>
+
+            {/* Final modal eliminar */}
+
+
+
+            {/* Modal ver comentario */}
+
+            <Modal open={openComentario}>
+                <Box sx={styleE}>
+                    <FormControl>
+                        <Box component="form"
+                            sx={{
+                                '& .MuiTextField-root': { m: 1, width: '25ch' },
+                            }}
+                            noValidate
+                            autoComplete="off">
+                            <ReviewsIcon className="icono" style={{ fontSize: 40, color: '#bc5090' }} />
+                            <TextField
+                                id="standard" label="Comentario" multiline={true} readOnly
+                                rows={3} variant="filled"
+                                value={seleccionarConfig && seleccionarConfig.COMENTARIO}
+                                inputProps={{ style: { color: 'black' } }}
+                            />
+                        </Box>
+                    </FormControl>
+                    <div className="botones-formnuevo">
+                        <Button className="btn-cancelarRegistro" variant="contained" color="info"
+                            onClick={() => setOpenComentario(false)}>
+                            No
+                        </Button>
+                    </div>
+                </Box>
+            </Modal>
+
+
+            {/* Final modal ver comentario */}
 
         </div>
     );

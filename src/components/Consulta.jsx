@@ -19,7 +19,7 @@ import '../styles/EstilosConsulta.css';
 
 function Consulta() {
 
-    const { idUsuario, requerimientoUsuario, accesoriosUsuario, estadoEquipoUsuario, pagoUsuario } = useParams();
+    const { idUsuario, requerimientoUsuario, accesoriosUsuario, estadoEquipoUsuario, pagoUsuario, nombreUsuario } = useParams();
 
     const [comentario, setComentario] = useState('');
 
@@ -94,7 +94,7 @@ function Consulta() {
                                 <h3><DataThresholdingIcon style={{ fontSize: 40, color: '#bc5090' }} /> Datos</h3>
                                 <div className="item izq">
                                     <h4>Detalle</h4>
-                                    <textarea name="datos" id="datos" readOnly value={idUsuario}></textarea>
+                                    <textarea name="datos" id="datos" readOnly value={nombreUsuario}></textarea>
                                     <div class="conectori">
                                         <div class="circuloi"></div>
                                     </div>

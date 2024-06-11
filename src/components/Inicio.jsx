@@ -58,7 +58,8 @@ function Inicio() {
                             footer: 'Bienvenido Cliente'
                           });        
                         navigate(`/consulta/${data.idUsuario}/${data.requerimientoUsuario}/
-                            ${data.accesoriosUsuario}/${data.estadoEquipoUsuario}/${data.pagoUsuario}`);
+                            ${data.accesoriosUsuario}/${data.estadoEquipoUsuario}/${data.pagoUsuario}/
+                            ${data.nombreUsuario}`);
                     }
                 
             }
