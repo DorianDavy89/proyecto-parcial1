@@ -253,7 +253,7 @@ input::placeholder{
     margin-top: 40px;
     border: 10px solid #8a508f;
     display: block;
-    width: 60%;
+    width: 50%;
     margin: auto;
     border-radius: 30%;
 }

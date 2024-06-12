@@ -33,6 +33,7 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import Swal from 'sweetalert2';
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import TextField from '@mui/material/TextField';
+import toast, { Toaster } from 'react-hot-toast';
 import '../styles/EstilosRegistro.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -190,6 +191,11 @@ function Registro() {
 
     const handleCrearSubmit = (event) => {
         event.preventDefault();
+
+        if (!usuario || !contra || !cedula || !nombre || !email || !whatsapp || !marca) {
+            toast.error("Existen campos Vacios.")
+            return;
+        }
         crearCliente();
         setTimeout(() => {
             window.location.reload();
@@ -225,7 +231,7 @@ function Registro() {
                     icon: "success",
                     title: "Perfecto",
                     text: "Cliente Actualizado!",
-                    footer: 'Credenciales enviadas por correo y whatsapp'
+                    footer: 'Espere a actualizar'
                 });
             }
             else if (response.status === 404) {
@@ -485,7 +491,15 @@ function Registro() {
                                 <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
                                     <BadgeIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
                                     <TextField id="cedula" label="Cedula" variant="filled" value={cedula}
-                                        onChange={(e) => setCedula(e.target.value)}
+                                        onChange={(e) => {
+                                            const re = /^[0-9\b]+$/;
+                                            if (e.target.value === '' || re.test(e.target.value)) {
+                                                setCedula(e.target.value)
+                                            }
+                                            else {
+                                                toast.error("Solo numeros.")
+                                            }
+                                        }}
                                         sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
                                 </Box>
 
@@ -506,7 +520,15 @@ function Registro() {
                                 <Box sx={{ display: 'flex', alignItems: 'flex-end', marginBottom: 2 }}>
                                     <WhatsAppIcon className="icono" style={{ fontSize: 40, color: '#bc5090', marginRight: '8px' }} />
                                     <TextField id="whatsapp" label="Whatsapp" variant="filled" value={whatsapp}
-                                        onChange={(e) => setWhatsapp(e.target.value)}
+                                       onChange={(e) => {
+                                        const re = /^[0-9\b]+$/;
+                                        if (e.target.value === '' || re.test(e.target.value)) {
+                                            setWhatsapp(e.target.value)
+                                        }
+                                        else {
+                                            toast.error("Solo numeros.")
+                                        }
+                                    }}
                                         sx={{ input: { color: 'black', backgroundColor: '#fff', width: '200px', height: '10px' } }} />
                                 </Box>
 
@@ -781,12 +803,12 @@ function Registro() {
                     <div className="botones-formnuevo">
                         <Button className="btn-cancelarRegistro" variant="contained" color="info"
                             onClick={() => setOpenComentario(false)}>
-                            No
+                            Cerrar
                         </Button>
                     </div>
                 </Box>
             </Modal>
-
+            <Toaster/>
 
             {/* Final modal ver comentario */}
 
