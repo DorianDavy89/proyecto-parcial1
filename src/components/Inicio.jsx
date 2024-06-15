@@ -41,27 +41,27 @@ function Inicio() {
             const data = await response.json();
 
             if (response.status === 200) {
-                    if (data.tipoUsuario === 'administrador') {
-                        Swal.fire({
-                            icon: "success",
-                            title: "Perfecto",
-                            text: "Credenciales Correctas!",
-                            footer: 'Bienvenido Administrador'
-                          });
-                        navigate('/registro/');
-                    }
-                    else if (data.tipoUsuario === 'cliente') {
-                        Swal.fire({
-                            icon: "success",
-                            title: "Perfecto",
-                            text: "Credenciales Correctas!",
-                            footer: 'Bienvenido Cliente'
-                          });        
-                        navigate(`/consulta/${data.idUsuario}/${data.requerimientoUsuario}/
-                            ${data.accesoriosUsuario}/${data.estadoEquipoUsuario}/${data.pagoUsuario}/
-                            ${data.nombreUsuario}`);
-                    }
-                
+                if (data.tipoUsuario === 'administrador') {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Perfecto",
+                        text: "Credenciales Correctas!",
+                        footer: 'Bienvenido Administrador'
+                    });
+                    navigate('/registro/');
+                }
+                else if (data.tipoUsuario === 'cliente') {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Perfecto",
+                        text: "Credenciales Correctas!",
+                        footer: 'Bienvenido Cliente'
+                    });
+                    navigate(`/consulta/${data.idUsuario}/${data.requerimientoUsuario}/
+                                ${data.accesoriosUsuario}/${data.estadoEquipoUsuario}/${data.pagoUsuario}/
+                                ${data.nombreUsuario}`);
+                }
+
             }
             else if (response.status === 404) {
                 Swal.fire({
@@ -69,8 +69,8 @@ function Inicio() {
                     title: "Oops...",
                     text: "Credenciales incorrectas!",
                     footer: 'Vuelve a Revisar'
-                  });
-                
+                });
+
             }
         } catch (error) {
             setMensaje('Error al iniciar sesión');
